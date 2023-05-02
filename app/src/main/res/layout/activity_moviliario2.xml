@@ -52,23 +52,22 @@
                 android:paddingTop="60dp">
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/tvFrontalMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="2"
                     android:gravity="center_vertical"
-                    android:text="Frontal"
+                    android:text="Ubicacion"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/floatingActionButton"
+                    android:id="@+id/fbFrontalMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:background="@android:drawable/ic_menu_report_image"
+                    android:clickable="true"
                     app:backgroundTint="#00FFFFFF"
-                    app:fabCustomSize="?android:attr/windowTitleSize"
                     app:fabSize="normal"
                     app:srcCompat="@android:drawable/ic_menu_report_image" />
 
@@ -82,7 +81,7 @@
                 android:paddingTop="20dp">
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/tvTraseraMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="2"
@@ -92,13 +91,12 @@
                     android:textSize="20sp" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/floatingActionButton"
+                    android:id="@+id/fbTraseraMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     app:backgroundTint="#00FFFFFF"
-                    app:fabCustomSize="?android:attr/windowTitleSize"
                     app:fabSize="normal"
                     app:srcCompat="@android:drawable/ic_menu_report_image" />
 
@@ -112,7 +110,7 @@
                 android:paddingTop="20dp">
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/tvInternaMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="2"
@@ -122,13 +120,12 @@
                     android:textSize="20sp" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/floatingActionButton"
+                    android:id="@+id/fbInternaMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     app:backgroundTint="#00FFFFFF"
-                    app:fabCustomSize="?android:attr/windowTitleSize"
                     app:fabSize="normal"
                     app:srcCompat="@android:drawable/ic_menu_report_image" />
 
@@ -142,7 +139,7 @@
                 android:paddingTop="20dp">
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/tvUbicacionMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="2"
@@ -152,13 +149,12 @@
                     android:textSize="20sp" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/floatingActionButton"
+                    android:id="@+id/fbUbicacionMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     app:backgroundTint="#00FFFFFF"
-                    app:fabCustomSize="?android:attr/windowTitleSize"
                     app:fabSize="normal"
                     app:srcCompat="@android:drawable/ic_menu_report_image" />
 
@@ -172,7 +168,7 @@
                 android:paddingTop="20dp">
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/tvIncidenciasMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="2"
@@ -182,13 +178,12 @@
                     android:textSize="20sp" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/floatingActionButton"
+                    android:id="@+id/fbIncidenciasMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     app:backgroundTint="#00FFFFFF"
-                    app:fabCustomSize="?android:attr/windowTitleSize"
                     app:fabSize="normal"
                     app:srcCompat="@android:drawable/ic_menu_report_image" />
 
@@ -219,7 +214,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/floatingActionButton3"
+                    android:id="@+id/fbRetrocesoMoviliario2"
                     android:layout_width="1dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -234,7 +229,7 @@
                     android:layout_weight="40" />
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/bPDFmoviliario"
                     android:layout_width="1dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="40"
