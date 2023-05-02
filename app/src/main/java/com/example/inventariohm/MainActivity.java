@@ -18,4 +18,8 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, Hardware.class);
         startActivity(i);
     }
+    public void BtnMueble(View v){
+        Intent i = new Intent(this, Moviliario.class);
+        startActivity(i);
+    }
 }

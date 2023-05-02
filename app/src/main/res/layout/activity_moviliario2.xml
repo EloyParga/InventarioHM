@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Moviliario2">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="601dp"
+        android:layout_height="598dp"
+        android:alpha="0.30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/scrollView3"
+        app:srcCompat="@drawable/hmlogo" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="60dp">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Seleccione las imagenes tu galeria"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="60dp">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="1dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="Frontal"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton"
+                    android:layout_width="1dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/ic_menu_report_image"
+                    app:backgroundTint="#00FFFFFF"
+                    app:fabCustomSize="?android:attr/windowTitleSize"
+                    app:fabSize="normal"
+                    app:srcCompat="@android:drawable/ic_menu_report_image" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="1dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="Trasera"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton"
+                    android:layout_width="1dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:backgroundTint="#00FFFFFF"
+                    app:fabCustomSize="?android:attr/windowTitleSize"
+                    app:fabSize="normal"
+                    app:srcCompat="@android:drawable/ic_menu_report_image" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="1dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="Interna"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton"
+                    android:layout_width="1dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:backgroundTint="#00FFFFFF"
+                    app:fabCustomSize="?android:attr/windowTitleSize"
+                    app:fabSize="normal"
+                    app:srcCompat="@android:drawable/ic_menu_report_image" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="1dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="Ubicacion"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton"
+                    android:layout_width="1dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:backgroundTint="#00FFFFFF"
+                    app:fabCustomSize="?android:attr/windowTitleSize"
+                    app:fabSize="normal"
+                    app:srcCompat="@android:drawable/ic_menu_report_image" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="1dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="Incidencias"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton"
+                    android:layout_width="1dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:backgroundTint="#00FFFFFF"
+                    app:fabCustomSize="?android:attr/windowTitleSize"
+                    app:fabSize="normal"
+                    app:srcCompat="@android:drawable/ic_menu_report_image" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:paddingTop="30dp">
+
+                <EditText
+                    android:id="@+id/editTextText12"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:background="@android:drawable/editbox_dropdown_dark_frame"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:hint="Observaciones..."
+                    android:inputType="text"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton3"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:clickable="true"
+                    app:backgroundTint="@color/Green"
+                    app:srcCompat="@drawable/flechaizquierda" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:backgroundTint="@color/Green"
+                    android:text="Exportar a PDF"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
