@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">InventarioHM</string>
+    <string-array name="hardware">
+        <item>Pantalla</item>
+        <item>CPU</item>
+        <item>Raton</item>
+        <item>Teclado</item>
+        <item>Portatil</item>
+    </string-array>
 </resources>
