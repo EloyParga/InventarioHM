@@ -26,6 +26,9 @@
             android:exported="false" />
         <activity
             android:name=".Pantalla"
+            android:exported="false"/>
+        <activity
+            android:name=".Moviliario2"
             android:exported="false" />
         <activity
             android:name=".Moviliario"
