@@ -5,6 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="601dp"
+        android:layout_height="598dp"
+        android:adjustViewBounds="false"
+        android:alpha="0.30"
+        android:background="@drawable/hmlogo"
+        android:cropToPadding="false"
+        android:outlineProvider="paddedBounds"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hmlogo"
+        tools:srcCompat="@drawable/hmlogo" />
+
+    <Spinner
+        android:id="@+id/spHardware"
+        android:layout_width="499dp"
+        android:layout_height="34dp"
+        android:background="@drawable/spinner_background"
+        android:drawableEnd="@drawable/flechanavegar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.617"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.321" />
+
     <EditText
         android:id="@+id/etModelo"
         android:layout_width="450dp"
@@ -22,6 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Modelo:"
+        android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,30 +72,49 @@
         app:layout_constraintHorizontal_bias="0.894"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.593" />
+        app:layout_constraintVertical_bias="0.65" />
 
     <TextView
         android:id="@+id/tvNSerie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nº Serie:"
+        android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597" />
+        app:layout_constraintVertical_bias="0.65" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        style="@android:style/Widget.DeviceDefault.Light.Spinner"
-        android:layout_width="500dp"
-        android:layout_height="40dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAtras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="Volver"
+        app:backgroundTint="@color/Green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.264" />
+        app:layout_constraintVertical_bias="0.949"
+        app:srcCompat="@drawable/flechaizquierda" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="@color/Green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95"
+        app:srcCompat="@drawable/flechaderecha" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
