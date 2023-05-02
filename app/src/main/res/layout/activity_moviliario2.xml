@@ -202,7 +202,7 @@
                 android:paddingTop="30dp">
 
                 <EditText
-                    android:id="@+id/editTextText12"
+                    android:id="@+id/etNotaMoviliario"
                     android:layout_width="match_parent"
                     android:layout_height="280dp"
                     android:background="@android:drawable/editbox_dropdown_dark_frame"

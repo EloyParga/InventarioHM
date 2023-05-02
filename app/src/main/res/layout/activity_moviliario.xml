@@ -35,7 +35,7 @@
                 android:paddingTop="30dp">
 
                 <EditText
-                    android:id="@+id/editTextText"
+                    android:id="@+id/etNSMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="75"
@@ -51,7 +51,7 @@
                     android:layout_weight="15" />
 
                 <EditText
-                    android:id="@+id/editTextDate"
+                    android:id="@+id/etFMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="45"
@@ -69,7 +69,7 @@
                 android:paddingTop="30dp">
 
                 <EditText
-                    android:id="@+id/editTextText3"
+                    android:id="@+id/etDesMoviliario"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
@@ -86,13 +86,13 @@
                 android:paddingTop="30dp">
 
                 <EditText
-                    android:id="@+id/editTextText5"
+                    android:id="@+id/etLargoMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="50"
                     android:ems="10"
                     android:hint="Largo"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
 
                 <TextView
                     android:id="@+id/textView3"
@@ -104,13 +104,13 @@
                     android:translationY="11dp" />
 
                 <EditText
-                    android:id="@+id/editTextText6"
+                    android:id="@+id/etAnchoMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="50"
                     android:ems="10"
                     android:hint="Ancho"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
 
                 <TextView
                     android:id="@+id/textView4"
@@ -122,13 +122,13 @@
                     android:translationY="11dp" />
 
                 <EditText
-                    android:id="@+id/editTextText7"
+                    android:id="@+id/etAltoMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="50"
                     android:ems="10"
                     android:hint="Alto"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
 
                 <TextView
                     android:id="@+id/textView5"
@@ -147,7 +147,7 @@
                 android:paddingTop="30dp">
 
                 <EditText
-                    android:id="@+id/editTextNumber"
+                    android:id="@+id/etUnidadesMoviliario"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
                     android:layout_weight="1"
@@ -165,7 +165,7 @@
                     android:translationY="11dp" />
 
                 <EditText
-                    android:id="@+id/editTextText9"
+                    android:id="@+id/etUbicacionMoviliario"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
                     android:layout_weight="1"
@@ -183,7 +183,7 @@
                 android:paddingTop="30dp">
 
                 <EditText
-                    android:id="@+id/editTextNumberDecimal"
+                    android:id="@+id/etPIMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="5"
@@ -201,7 +201,7 @@
                     android:translationY="11dp" />
 
                 <EditText
-                    android:id="@+id/editTextNumberDecimal2"
+                    android:id="@+id/etPAMoviliario"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="5"
@@ -227,7 +227,7 @@
                 android:paddingTop="30dp">
 
                 <EditText
-                    android:id="@+id/editTextText12"
+                    android:id="@+id/etNotaMoviliario"
                     android:layout_width="match_parent"
                     android:layout_height="280dp"
                     android:background="@android:drawable/editbox_dropdown_dark_frame"
