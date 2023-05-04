@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/flechaizq" />
 
     <Button
-        android:id="@+id/btnPDF"
+        android:id="@+id/btnPDFmoviliario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#74AB37"
