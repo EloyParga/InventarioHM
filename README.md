@@ -38,8 +38,6 @@ _Lenguajes:_
 
 ## Autores ✒️
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
-
 * **Eloy García Parga** - *Desarrollador* - [EloyParga](https://github.com/EloyParga)
 * **Gabriel Gomez Iglesias** - *Desarrollador* - [GabrielGomezI](https://github.com/GabrielGomezI)
 
