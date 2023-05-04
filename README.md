@@ -49,4 +49,4 @@ _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios
 
 
 ---
-⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊
+
