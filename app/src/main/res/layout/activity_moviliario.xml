@@ -86,7 +86,7 @@
                 android:paddingTop="30dp">
 
                 <EditText
-                    android:id="@+id/etLargoMoviliario"
+                    android:id="@+id/etLargoCPU"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="50"
@@ -104,7 +104,7 @@
                     android:translationY="11dp" />
 
                 <EditText
-                    android:id="@+id/etAnchoMoviliario"
+                    android:id="@+id/etAnchoCPU"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="50"
@@ -122,7 +122,7 @@
                     android:translationY="11dp" />
 
                 <EditText
-                    android:id="@+id/etAltoMoviliario"
+                    android:id="@+id/etAltoCPU"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="50"
@@ -147,7 +147,7 @@
                 android:paddingTop="30dp">
 
                 <EditText
-                    android:id="@+id/etUnidadesMoviliario"
+                    android:id="@+id/etProcsadorCPU"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
                     android:layout_weight="1"
@@ -165,7 +165,7 @@
                     android:translationY="11dp" />
 
                 <EditText
-                    android:id="@+id/etUbicacionMoviliario"
+                    android:id="@+id/etRAMCPU"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
                     android:layout_weight="1"
