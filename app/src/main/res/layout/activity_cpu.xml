@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".CPU">
 
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="480dp"
+        android:text="Indica el numero de puertos"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="601dp"
@@ -15,20 +25,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hmlogo" />
 
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Indica el numero de puertos"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout12"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout3" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_marginTop="880dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"
@@ -36,7 +38,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:translationX="45dp"
+            android:onClick="retroceder"
+            android:translationX="50dp"
+            app:backgroundTint="@color/Green"
             app:srcCompat="@drawable/flechaizq" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -45,6 +49,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
+            android:onClick="avance"
+            android:translationX="430dp"
+            app:backgroundTint="@color/Green"
             app:srcCompat="@drawable/flechadere" />
     </LinearLayout>
 
@@ -52,7 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="214dp"
-        android:layout_marginTop="844dp"
+        android:layout_marginTop="804dp"
         android:layout_marginEnd="214dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="204dp"
-        android:layout_marginTop="783dp"
+        android:layout_marginTop="743dp"
         android:layout_marginEnd="204dp"
         android:layout_weight="1"
         android:orientation="horizontal"
@@ -111,7 +118,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="204dp"
-        android:layout_marginTop="733dp"
+        android:layout_marginTop="693dp"
         android:layout_marginEnd="204dp"
         android:layout_weight="1"
         android:orientation="horizontal"
@@ -142,7 +149,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="204dp"
-        android:layout_marginTop="687dp"
+        android:layout_marginTop="647dp"
         android:layout_marginEnd="204dp"
         android:layout_weight="1"
         android:orientation="horizontal"
@@ -173,7 +180,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="204dp"
-        android:layout_marginTop="627dp"
+        android:layout_marginTop="587dp"
         android:layout_marginEnd="204dp"
         android:layout_weight="1"
         android:orientation="horizontal"
@@ -204,7 +211,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="204dp"
-        android:layout_marginTop="576dp"
+        android:layout_marginTop="536dp"
         android:layout_marginEnd="204dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -234,7 +241,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="29dp"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="330dp"
         android:layout_marginEnd="40dp"
         android:layout_weight="5"
         android:orientation="horizontal"
@@ -294,7 +301,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="313dp"
+        android:layout_marginTop="273dp"
         android:layout_marginEnd="42dp"
         android:layout_weight="1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -341,7 +348,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="37dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -403,10 +410,11 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="41dp"
-        android:layout_marginTop="229dp"
+        android:layout_marginTop="189dp"
         android:layout_marginEnd="37dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
