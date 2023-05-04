@@ -9,11 +9,14 @@ de tal forma que puedes documentar de forma oficial el inventariado._
 _Que cosas necesitas para instalar el software y como instalarlas_
 
 ```
-Este Proyecto esta enfocado a una empresa fisica. HazMaker, si quieres descargarla solamente necesitas:
+Este Proyecto esta enfocado a una empresa fisica. HazMaker, 
+si quieres descargarla solamente necesitas:
+
 1-Generar un .JAR a traves de Android Studio
 2-Transferir ese .JAR a tu dispositivo
 3-Instalarlo
-4-Si te sale una alerta de riesgo no te preocupes, los dispositivos avisan de softwares externos, da permisos e instalalo de igual forma
+4-Si te sale una alerta de riesgo no te preocupes, 
+los dispositivos avisan de softwares externos, da permisos e instalalo de igual forma
 ```
 
 ## Construido con 🛠️
