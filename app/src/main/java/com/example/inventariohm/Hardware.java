@@ -13,13 +13,15 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class Hardware extends AppCompatActivity {
     Spinner spHardware;
     FloatingActionButton btnSiguiente;
+    FloatingActionButton btnAtras;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hardware);
         spHardware =findViewById(R.id.spHardware);
-        btnSiguiente = findViewById(R.id.btnSiguiente);
 
+        btnSiguiente = findViewById(R.id.btnSiguiente);
+        btnAtras = findViewById(R.id.btnAtras);
 
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +48,15 @@ public class Hardware extends AppCompatActivity {
 
             }
         });
+
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
     }
 
 

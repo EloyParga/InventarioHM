@@ -6,6 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".Moviliario">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnSigMovil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="@color/Green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.94"
+        app:srcCompat="@drawable/flechadere" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAntMovil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="@color/Green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.94"
+        app:srcCompat="@drawable/flechaizq" />
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="601dp"
@@ -19,7 +47,10 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,13 +76,13 @@
                     android:paddingRight="30dp" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/separador"
                     android:layout_width="1dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="15" />
 
                 <EditText
-                    android:id="@+id/etFMoviliario"
+                    android:id="@+id/etFecha"
                     android:layout_width="1dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="45"
@@ -95,8 +126,8 @@
                     android:inputType="numberDecimal" />
 
                 <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="1dp"
+                    android:id="@+id/tvCm1"
+                    android:layout_width="2dp"
                     android:layout_height="60dp"
                     android:layout_weight="10"
                     android:text="cm"
@@ -113,8 +144,8 @@
                     android:inputType="numberDecimal" />
 
                 <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="1dp"
+                    android:id="@+id/tvCm2"
+                    android:layout_width="2dp"
                     android:layout_height="60dp"
                     android:layout_weight="10"
                     android:text="cm"
@@ -131,7 +162,7 @@
                     android:inputType="numberDecimal" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/tvCm3"
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:layout_weight="10"
@@ -156,7 +187,7 @@
                     android:inputType="number" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/tvUds"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -192,7 +223,7 @@
                     android:inputType="numberDecimal" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/tvEuros1"
                     android:layout_width="1dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -210,7 +241,7 @@
                     android:inputType="numberDecimal" />
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/tvEuros2"
                     android:layout_width="1dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -230,26 +261,11 @@
                     android:id="@+id/etNotaMoviliario"
                     android:layout_width="match_parent"
                     android:layout_height="280dp"
-                    android:background="@android:drawable/editbox_dropdown_dark_frame"
-                    android:backgroundTint="#FFFFFF"
+                    android:background="@drawable/notes_background"
                     android:ems="10"
                     android:hint="Notas..."
                     android:inputType="text"
                     android:textAlignment="center" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="195dp"
-                android:orientation="horizontal"
-                android:paddingTop="60dp">
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="1dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="100" />
-
             </LinearLayout>
 
         </LinearLayout>
