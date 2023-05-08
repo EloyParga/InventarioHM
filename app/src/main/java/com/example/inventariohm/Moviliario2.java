@@ -5,19 +5,24 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.pdf.PdfDocument;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import android.os.Environment;
@@ -32,6 +37,9 @@ public class Moviliario2 extends AppCompatActivity {
     FloatingActionButton btnAntMovil2;
 
     Button btnPDFmoviliario;
+
+    private File f;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,5 +152,35 @@ public class Moviliario2 extends AppCompatActivity {
                 }
             }
         }
+    }
+    public void importarImagen(View vista){
+        Intent i=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        i.setType("image/");
+        startActivityForResult(Intent.createChooser(i,"Seleccione la aplicacion"),10);
+        }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==RESULT_OK){
+            Uri uri=data.getData();
+            final String realPath=getRealPathFromUri(uri);
+            this.f=new File(realPath);
+            //this.imageUser.setImageUri(uri);
+        }
+    }
+
+    private String getRealPathFromUri(Uri contentUri) {
+        String result;
+        Cursor cursor=getContentResolver().query(contentUri,null,null,null,null);
+        if(cursor == null){
+            result=contentUri.getPath();
+        }else{
+            cursor.moveToFirst();
+            int idx=cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+            result=cursor.getString(idx);
+            cursor.close();
+        }
+        return result;
     }
 }
