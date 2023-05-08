@@ -16,6 +16,9 @@
         android:theme="@style/Theme.InventarioHM"
         tools:targetApi="31">
         <activity
+            android:name=".CPU2"
+            android:exported="false" />
+        <activity
             android:name=".Pantalla2"
             android:exported="false" />
         <activity
