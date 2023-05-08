@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Moviliario2">
+    tools:context=".Pantalla2">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnAntMovil2"
+        android:id="@+id/btnAntMovil5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/flechaizq" />
 
     <Button
-        android:id="@+id/btnPDFmoviliario"
+        android:id="@+id/btnPDFmoviliario3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#74AB37"
@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="0.939" />
 
     <ImageView
-        android:id="@+id/ivMovil2Logo"
+        android:id="@+id/ivMovil2Logo3"
         android:layout_width="601dp"
         android:layout_height="598dp"
         android:alpha="0.30"
@@ -49,7 +49,7 @@
         app:srcCompat="@drawable/hmlogo" />
 
     <TextView
-        android:id="@+id/tvEnumMovil2"
+        android:id="@+id/tvEnumMovil3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Selecciona las imagenes de la galeria"
@@ -62,7 +62,7 @@
         app:layout_constraintVertical_bias="0.100000024" />
 
     <EditText
-        android:id="@+id/etObservaMoviliario2"
+        android:id="@+id/etObservaMoviliario3"
         android:layout_width="500dp"
         android:layout_height="250dp"
         android:background="@drawable/notes_background"
@@ -74,17 +74,18 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.257" />
+        app:layout_constraintVertical_bias="0.20999998" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEnumMovil2">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3">
 
         =======
 
@@ -101,8 +102,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingRight="50dp"
-                android:text="Interna"
+                android:text="Frontal*"
                 android:textColor="@color/Black"
+                android:textIsSelectable="false"
                 android:textSize="24sp" />
 
             <ImageView
@@ -122,12 +124,12 @@
             android:paddingBottom="10dp">
 
             <TextView
-                android:id="@+id/tvInterMovil"
+                android:id="@+id/tvNSPantalla"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingRight="50dp"
-                android:text="Interna"
+                android:text="N / S  *  "
                 android:textColor="@color/Black"
                 android:textSize="24sp" />
 
@@ -148,43 +150,17 @@
             android:paddingBottom="10dp">
 
             <TextView
-                android:id="@+id/tvTrasMovil"
+                android:id="@+id/tvPuertosPantalla"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingRight="50dp"
-                android:text="Trasera"
+                android:text="Puertos "
                 android:textColor="@color/Black"
                 android:textSize="24sp" />
 
             <ImageView
                 android:id="@+id/ivFoto2"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_weight="0.5"
-                app:srcCompat="@drawable/foto" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp">
-
-            <TextView
-                android:id="@+id/tvUbiMovil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="15dp"
-                android:text="Ubicación"
-                android:textColor="@color/Black"
-                android:textSize="24sp" />
-
-            <ImageView
-                android:id="@+id/ivFoto4"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_weight="0.5"
@@ -200,12 +176,12 @@
             android:paddingBottom="10dp">
 
             <TextView
-                android:id="@+id/tvIncidentMovil"
+                android:id="@+id/tvIncidentPantalla"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingRight="10dp"
-                android:text="Incidencias"
+                android:text="Incidencias "
                 android:textColor="@color/Black"
                 android:textSize="24sp" />
 
@@ -220,5 +196,14 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Los campos * Son obligatorios)"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEnumMovil3"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-

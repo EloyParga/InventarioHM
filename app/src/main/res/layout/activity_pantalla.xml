@@ -199,7 +199,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="126dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
@@ -211,99 +211,103 @@
             android:orientation="horizontal"
             android:paddingBottom="10dp">
 
-            <EditText
-                android:id="@+id/etVGA"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:hint="VGA"
-                android:inputType="number"
-                android:shadowColor="#000000"
-                android:textColor="#000000"
-                android:textColorHighlight="#040404"
-                android:textColorLink="#000000" />
-
             <TextView
                 android:id="@+id/uds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="uds"
+                android:text="VGA:    "
                 android:textColor="#000000"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+                android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/etHDMI"
+                android:id="@+id/etVGA"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:hint="HDMI"
+                android:hint="Unidades"
                 android:inputType="number"
                 android:shadowColor="#000000"
                 android:textColor="#000000"
                 android:textColorHighlight="#040404"
                 android:textColorLink="#000000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/uds2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="uds"
+                android:text="HDMI: "
                 android:textColor="#000000"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+                android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/etUSB"
+                android:id="@+id/etHDMI"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:hint="USB"
+                android:hint="Unidades"
                 android:inputType="number"
                 android:shadowColor="#000000"
                 android:textColor="#000000"
                 android:textColorHighlight="#040404"
                 android:textColorLink="#000000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/uds3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="uds"
+                android:text="USB:    "
                 android:textColor="#000000"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/etUSB"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="Unidades"
+                android:inputType="number"
+                android:shadowColor="#000000"
+                android:textColor="#000000"
+                android:textColorHighlight="#040404"
+                android:textColorLink="#000000" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/etDVI"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:hint="DVI"
-                android:inputType="number"
-                android:shadowColor="#000000"
-                android:textColor="#000000"
-                android:textColorHighlight="#040404"
-                android:textColorLink="#000000" />
 
             <TextView
                 android:id="@+id/uds4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="uds"
+                android:text="DVI:     "
                 android:textColor="#000000"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/etDVI"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="Unidades"
+                android:inputType="number"
+                android:shadowColor="#000000"
+                android:textColor="#000000"
+                android:textColorHighlight="#040404"
+                android:textColorLink="#000000" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -311,24 +315,25 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/uds5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DP:      "
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
             <EditText
                 android:id="@+id/etDP"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:hint="DP"
+                android:hint="Unidades"
                 android:inputType="number"
                 android:shadowColor="#000000"
                 android:textColor="#000000"
                 android:textColorHighlight="#040404"
                 android:textColorLink="#000000" />
 
-            <TextView
-                android:id="@+id/uds5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="uds"
-                android:textColor="#000000"
-                android:textSize="16sp" />
         </LinearLayout>
     </LinearLayout>
 
