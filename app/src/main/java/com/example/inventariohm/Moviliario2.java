@@ -58,12 +58,6 @@ public class Moviliario2 extends AppCompatActivity {
             }
         });
 
-       /* ActivityResultLauncher<String> requestPermisionLauncher=registerForActivityResult(
-                new ActivityResultContracts.RequestPermission(), isAceptado ->{
-                    if (isAceptado) Toast.makeText(this,"",Toast.LENGTH_LONG).show();
-                    else Toast.makeText(this,"",Toast.LENGTH_LONG).show();
-                }
-        );*/
 
         if(checkPermission()) {
             Toast.makeText(this, "Permiso Aceptado", Toast.LENGTH_LONG).show();
@@ -95,19 +89,8 @@ public class Moviliario2 extends AppCompatActivity {
         Canvas canvas = pagina1.getCanvas();
 
 
-        //Banner Superior
-        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 595, 66, false);
-        canvas.drawBitmap(bitmapEscala, 0, 40, paint);
 
 
-
-        //LOGO
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 60, 60, false);
-        canvas.drawBitmap(bitmapEscala, 492, 43, paint);
-
-        //DIRECCION
 
         // Caja inicio
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -362,6 +345,8 @@ public class Moviliario2 extends AppCompatActivity {
             }
         }
     }
+
+    //TRATADO DE IMAGENES DEBAJO
     public void importarImagen(View vista){
         Intent i=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         i.setType("image/");
