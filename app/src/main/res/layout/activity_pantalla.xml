@@ -166,7 +166,7 @@
             android:paddingBottom="15dp">
 
             <Spinner
-                android:id="@+id/spAliment"
+                android:id="@+id/spConectividad"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"
@@ -178,7 +178,7 @@
                 android:layout_height="match_parent" />
 
             <Spinner
-                android:id="@+id/spPantalla"
+                android:id="@+id/spIdioma"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"

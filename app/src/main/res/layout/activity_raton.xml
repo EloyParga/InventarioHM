@@ -34,8 +34,23 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/hmlogo" />
+
+    <EditText
+        android:id="@+id/etObservaMoviliario4"
+        android:layout_width="500dp"
+        android:layout_height="250dp"
+        android:background="@drawable/notes_background"
+        android:hint="Observaciones..."
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnAntMovil3"
@@ -57,7 +72,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="40dp"
-        android:paddingTop="200dp"
+        android:paddingTop="50dp"
         android:paddingRight="40dp"
         android:paddingBottom="20dp"
         tools:layout_editor_absoluteX="-2dp">
@@ -163,7 +178,7 @@
             android:paddingBottom="15dp">
 
             <Spinner
-                android:id="@+id/spAliment"
+                android:id="@+id/spConectividad"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"
@@ -175,7 +190,7 @@
                 android:layout_height="match_parent" />
 
             <Spinner
-                android:id="@+id/spPantalla"
+                android:id="@+id/spIdioma"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"
@@ -196,7 +211,7 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView10"
@@ -219,7 +234,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65">
+        app:layout_constraintVertical_bias="0.42000002">
 
         =======
 
