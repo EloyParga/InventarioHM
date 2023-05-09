@@ -87,18 +87,209 @@ public class Moviliario2 extends AppCompatActivity {
 
         Bitmap bitmap, bitmapEscala;
 
-        PdfDocument.PageInfo paginaInfo = new PdfDocument.PageInfo.Builder(2100, 2970, 1).create();
+        PdfDocument.PageInfo paginaInfo = new PdfDocument.PageInfo.Builder(595, 842, 1).create();
         PdfDocument.Page pagina1 = pdfDocument.startPage(paginaInfo);
 
         Canvas canvas = pagina1.getCanvas();
 
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 80, false);
-        canvas.drawBitmap(bitmapEscala, 368, 20, paint);
+        // Caja inicio
+        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 595, 60, false);
+        canvas.drawBitmap(bitmapEscala, 0, 43, paint);
 
+        //LOGO
+        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 60, 60, false);
+        canvas.drawBitmap(bitmapEscala, 485, 43, paint);
+
+
+//=======
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(20);
-        canvas.drawText("TITULO", 100, 150, titulo);
+        titulo.setTextSize(13);
+        canvas.drawText("C. Gran Capitán, 52, Gijón", 60, 79, titulo);
+
+
+        //CORREO Y TELEFONO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("985 66 54 41   hm@hazmaker.org", 222, 79, titulo);
+
+        //FECHA
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("00/00/00", 420, 79, titulo);
+
+        //Descripcion
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("Descripcion", 43, 135, titulo);
+
+        // Descripcion Banner
+        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 417, 23, false);
+        canvas.drawBitmap(bitmapEscala, 129, 120, paint);
+
+        //Largo
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("Largo", 43, 162, titulo);
+
+        // Largo Banner
+        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 22, false);
+        canvas.drawBitmap(bitmapEscala, 105, 151, paint);
+
+        //Ancho
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("Ancho", 210, 162, titulo);
+
+        // Ancho Banner
+        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 22, false);
+        canvas.drawBitmap(bitmapEscala, 277, 151, paint);
+
+        //Alto
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("Alto", 389, 162, titulo);
+
+        // Alto Banner
+        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 22, false);
+        canvas.drawBitmap(bitmapEscala, 453, 151, paint);
+
+        //Cantidad
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("Cantidad", 43, 191, titulo);
+
+        // Cantidad Banner
+        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 123, 22, false);
+        canvas.drawBitmap(bitmapEscala, 108, 180, paint);
+
+        //Ubicacion
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("Ubicacion", 240, 191, titulo);
+
+        // Ubicacion Banner
+        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 231, 22, false);
+        canvas.drawBitmap(bitmapEscala, 315, 180, paint);
+
+        //Precio inicial
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("Precio Inicial", 43, 222, titulo);
+
+        // Precio inicial Banner
+        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 152, 22, false);
+        canvas.drawBitmap(bitmapEscala, 135, 209, paint);
+
+        //Precio final
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("Precio final", 300, 222, titulo);
+
+        // Precio final Banner
+        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 152, 22, false);
+        canvas.drawBitmap(bitmapEscala, 394, 209, paint);
+
+        //Notas
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("Notas", 43, 250, titulo);
+
+        // Notas Banner
+        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 447, 70, false);
+        canvas.drawBitmap(bitmapEscala, 99, 239, paint);
+
+        //Observaciones
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("Observaciones", 43, 330, titulo);
+
+        // Observaciones Banner
+        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 400, 75, false);
+        canvas.drawBitmap(bitmapEscala, 146, 318, paint);
+
+        //FRONTAL
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("FRONTAL", 60, 420, titulo);
+
+        //IMAGEN FRONTAL
+        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
+        canvas.drawBitmap(bitmapEscala, 43, 438, paint);
+
+        //Trasera
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("TRASERA", 277, 420, titulo);
+
+        //IMAGEN Trasera
+        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
+        canvas.drawBitmap(bitmapEscala, 253, 438, paint);
+
+        //Interna
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("INTERNA", 473, 420, titulo);
+
+        //IMAGEN Interna
+        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
+        canvas.drawBitmap(bitmapEscala, 448, 438, paint);
+
+        //Ubicacion
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("UBICACION", 160, 539, titulo);
+
+        //IMAGEN Ubicacion
+        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
+        canvas.drawBitmap(bitmapEscala, 143, 549, paint);
+
+        //Incidencias
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("INCIDENCIAS", 365, 539, titulo);
+
+        //IMAGEN incidencias
+        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
+        canvas.drawBitmap(bitmapEscala, 353, 549, paint);
+
+        // Firma Banner
+        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 595, 20, false);
+        canvas.drawBitmap(bitmapEscala, 0, 663, paint);
+
+        //FIRMA
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(13);
+        canvas.drawText("FDO. Operador", 258, 678, titulo);
+
+        // Espacio Firma
+        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_dark);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 255, 114, false);
+        canvas.drawBitmap(bitmapEscala, 174, 685, paint);
+
+
+        // Espacio Firma
+        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.pixelblanco);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 253, 112, false);
+        canvas.drawBitmap(bitmapEscala, 175, 686, paint);
+//>>>>>>> Stashed changes
 
         descripcion.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
         descripcion.setTextSize(14);
