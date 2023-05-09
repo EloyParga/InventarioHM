@@ -130,7 +130,7 @@
             android:paddingBottom="15dp">
 
             <Spinner
-                android:id="@+id/spConectividad"
+                android:id="@+id/spAlimentacion"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"
@@ -142,7 +142,7 @@
                 android:layout_height="match_parent" />
 
             <Spinner
-                android:id="@+id/spIdioma"
+                android:id="@+id/spSO"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"
