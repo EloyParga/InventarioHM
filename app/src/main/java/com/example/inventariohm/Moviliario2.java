@@ -46,6 +46,19 @@ public class Moviliario2 extends AppCompatActivity {
     private EditText etObservaMoviliario2;
 
 
+    private String numSerie ;
+    private String fecha ;
+    private String descripcion ;
+    private String largo;
+    private String ancho ;
+    private String alto ;
+    private String cantidad ;
+    private String ubicacion ;
+    private String precioInicial;
+    private String precioActual;
+    private String notas ;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,17 +67,17 @@ public class Moviliario2 extends AppCompatActivity {
 
 
         Bundle b = getIntent().getExtras();
-        String numSerie = b.getString("numSerie");
-        String fecha = b.getString("fecha" );
-        String descripcion = b.getString("descripcion" );
-        String largo = b.getString("largo" );
-        String ancho = b.getString("ancho" );
-        String alto = b.getString("alto" );
-        String cantidad = b.getString("cantidad" );
-        String ubicacion = b.getString("ubicacion" );
-        String precioInicial = b.getString("precioInicial" );
-        String precioActual = b.getString("precioActual" );
-        String notas = b.getString("notas" );
+         numSerie = b.getString("numSerie");
+         fecha = b.getString("fecha" );
+         descripcion = b.getString("descripcion" );
+         largo = b.getString("largo" );
+         ancho = b.getString("ancho" );
+         alto = b.getString("alto" );
+         cantidad = b.getString("cantidad" );
+         ubicacion = b.getString("ubicacion" );
+         precioInicial = b.getString("precioInicial" );
+         precioActual = b.getString("precioActual" );
+         notas = b.getString("notas" );
 
 
 
@@ -136,7 +149,8 @@ public class Moviliario2 extends AppCompatActivity {
         //FECHA
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
-        canvas.drawText("00/00/00", 420, 79, titulo);
+
+        canvas.drawText(fecha, 420, 79, titulo);
 
         //Descripcion
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
