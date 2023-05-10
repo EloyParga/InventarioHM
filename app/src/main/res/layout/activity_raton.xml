@@ -50,7 +50,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.17000002" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnAntMovil3"
@@ -148,11 +148,12 @@
             android:paddingBottom="15dp">
 
             <Spinner
-                android:id="@+id/spResolucion"
+                android:id="@+id/spConexion"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_weight="50"
-                android:background="@drawable/spinner_background" />
+                android:background="@drawable/spinner_background"
+                android:entries="@array/Conectividad" />
 
             <TextView
                 android:id="@+id/separador2"
@@ -168,33 +169,6 @@
                 android:hint="Nº Botones"
                 android:inputType="numberDecimal" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp">
-
-            <Spinner
-                android:id="@+id/spAlimentacion"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_weight="48"
-                android:background="@drawable/spinner_background" />
-
-            <TextView
-                android:id="@+id/separador3"
-                android:layout_width="10dp"
-                android:layout_height="match_parent" />
-
-            <Spinner
-                android:id="@+id/spSO"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_weight="48"
-                android:background="@drawable/spinner_background" />
         </LinearLayout>
 
     </LinearLayout>
@@ -234,7 +208,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42000002">
+        app:layout_constraintVertical_bias="0.37">
 
         =======
 

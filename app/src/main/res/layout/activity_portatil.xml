@@ -53,7 +53,8 @@
         android:paddingLeft="40dp"
         android:paddingTop="30dp"
         android:paddingRight="40dp"
-        tools:layout_editor_absoluteX="-2dp">
+        tools:layout_editor_absoluteX="-2dp"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:id="@+id/lyDimensiones"
@@ -208,11 +209,12 @@
             android:paddingBottom="15dp">
 
             <Spinner
-                android:id="@+id/spAlimentacion"
+                android:id="@+id/spConectividad"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"
-                android:background="@drawable/spinner_background" />
+                android:background="@drawable/spinner_background"
+                android:entries="@array/Alimentacion" />
 
             <TextView
                 android:id="@+id/separador3"
@@ -224,7 +226,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"
-                android:background="@drawable/spinner_background" />
+                android:background="@drawable/spinner_background"
+                android:entries="@array/SO" />
         </LinearLayout>
 
         <LinearLayout
@@ -239,7 +242,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"
-                android:background="@drawable/spinner_background" />
+                android:background="@drawable/spinner_background"
+                android:entries="@array/Idioma" />
 
             <TextView
                 android:id="@+id/separador9"
@@ -251,7 +255,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"
-                android:background="@drawable/spinner_background" />
+                android:background="@drawable/spinner_background"
+                android:entries="@array/TiposPantalla" />
 
         </LinearLayout>
 
@@ -265,14 +270,15 @@
             android:paddingBottom="15dp">
 
             <Spinner
-                android:id="@+id/spResolucion"
+                android:id="@+id/spConexion"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_weight="50"
-                android:background="@drawable/spinner_background" />
+                android:background="@drawable/spinner_background"
+                android:entries="@array/Resolucion" />
 
             <TextView
-                android:id="@+id/separador2"
+                android:id="@+id/separador12"
                 android:layout_width="10dp"
                 android:layout_height="match_parent" />
 

@@ -7,4 +7,46 @@
         <item>Teclado</item>
         <item>Portatil</item>
     </string-array>
+
+    <string-array name="SO">
+        <item>Windows 7</item>
+        <item>Windows 10</item>
+        <item>Windows 11</item>
+        <item>MacOS</item>
+        <item>Linux</item>
+    </string-array>
+
+    <string-array name="Alimentacion">
+        <item>Corriente Alterna (AC)</item>
+        <item>Corriente Continua (DC)</item>
+    </string-array>
+
+    <string-array name="Idioma">
+        <item>ESP</item>
+        <item>ENG</item>
+        <item>RUS</item>
+        <item>LATAM</item>
+    </string-array>
+
+    <string-array name="Resolucion">
+        <item>480</item>
+        <item>540</item>
+        <item>720</item>
+        <item>1.080</item>
+        <item>1.440</item>
+        <item>2.160 </item>
+        <item>4.320</item>
+    </string-array>
+
+    <string-array name="TiposPantalla">
+        <item>LED</item>
+        <item>OLED</item>
+        <item>QLED</item>
+    </string-array>
+
+    <string-array name="Conectividad">
+        <item>PS/2</item>
+        <item>USB</item>
+        <item>Bluetooth</item>
+    </string-array>
 </resources>

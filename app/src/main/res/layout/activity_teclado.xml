@@ -130,11 +130,12 @@
             android:paddingBottom="15dp">
 
             <Spinner
-                android:id="@+id/spAlimentacion"
+                android:id="@+id/spConectividad"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"
-                android:background="@drawable/spinner_background" />
+                android:background="@drawable/spinner_background"
+                android:entries="@array/Conectividad" />
 
             <TextView
                 android:id="@+id/separador3"
@@ -142,11 +143,12 @@
                 android:layout_height="match_parent" />
 
             <Spinner
-                android:id="@+id/spSO"
+                android:id="@+id/spIdioma"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"
-                android:background="@drawable/spinner_background" />
+                android:background="@drawable/spinner_background"
+                android:entries="@array/Idioma" />
         </LinearLayout>
 
     </LinearLayout>

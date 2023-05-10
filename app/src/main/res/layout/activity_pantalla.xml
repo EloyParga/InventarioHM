@@ -127,11 +127,12 @@
             android:paddingBottom="15dp">
 
             <Spinner
-                android:id="@+id/spResolucion"
+                android:id="@+id/spConexion"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_weight="50"
-                android:background="@drawable/spinner_background" />
+                android:background="@drawable/spinner_background"
+                android:entries="@array/Resolucion" />
 
             <TextView
                 android:id="@+id/separador2"
@@ -166,11 +167,12 @@
             android:paddingBottom="15dp">
 
             <Spinner
-                android:id="@+id/spAlimentacion"
+                android:id="@+id/spConectividad"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"
-                android:background="@drawable/spinner_background" />
+                android:background="@drawable/spinner_background"
+                android:entries="@array/Alimentacion" />
 
             <TextView
                 android:id="@+id/separador3"
@@ -178,11 +180,12 @@
                 android:layout_height="match_parent" />
 
             <Spinner
-                android:id="@+id/spSO"
+                android:id="@+id/spIdioma"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"
-                android:background="@drawable/spinner_background" />
+                android:background="@drawable/spinner_background"
+                android:entries="@array/TiposPantalla" />
         </LinearLayout>
 
         <TextView
