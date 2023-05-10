@@ -38,8 +38,8 @@ import java.io.FileOutputStream;
 
 public class Moviliario2 extends AppCompatActivity {
     FloatingActionButton btnAntMovil2;
-    public String descripcionMueble,largo,ancho,alto,cantidad,
-            ubicacion,precioI,precioA,notas,observaciones;
+    public String descripcionMueble,largo,ancho,alto,cantidad,fecha,
+            ubicacion,precioI,precioA,notas,observaciones,numSerie;
 
     Button btnPDFmoviliario;
 
@@ -47,18 +47,6 @@ public class Moviliario2 extends AppCompatActivity {
 
     private EditText etObservaMoviliario2;
 
-
-    private String numSerie ;
-    private String fecha ;
-    private String descripcion ;
-    private String largo;
-    private String ancho ;
-    private String alto ;
-    private String cantidad ;
-    private String ubicacion ;
-    private String precioInicial;
-    private String precioActual;
-    private String notas ;
 
 
     @Override
@@ -68,19 +56,19 @@ public class Moviliario2 extends AppCompatActivity {
         etObservaMoviliario2 = findViewById(R.id.etObservaMoviliario2);
 
 
-        Bundle b = getIntent().getExtras();
+         Bundle b = getIntent().getExtras();
          numSerie = b.getString("numSerie");
          fecha = b.getString("fecha" );
-         descripcion = b.getString("descripcion" );
+         descripcionMueble = b.getString("descripcion" );
          largo = b.getString("largo" );
          ancho = b.getString("ancho" );
          alto = b.getString("alto" );
          cantidad = b.getString("cantidad" );
          ubicacion = b.getString("ubicacion" );
-         precioInicial = b.getString("precioInicial" );
-         precioActual = b.getString("precioActual" );
+         precioI = b.getString("precioInicial" );
+         precioA = b.getString("precioActual" );
          notas = b.getString("notas" );
-
+         observaciones = etObservaMoviliario2.getText().toString();
 
 
         btnAntMovil2 = findViewById(R.id.btnAntMovil2);
