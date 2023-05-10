@@ -285,7 +285,7 @@ public class Moviliario2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 400, 75, false);
         canvas.drawBitmap(bitmapEscala, 146, 318, paint);
 
-        //Observaciones
+        //Observaciones INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
         canvas.drawText(observaciones+"", 149, 330, titulo);
