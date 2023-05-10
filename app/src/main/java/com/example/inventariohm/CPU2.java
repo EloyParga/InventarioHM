@@ -30,6 +30,8 @@ import java.io.FileOutputStream;
 
 public class CPU2 extends AppCompatActivity {
     FloatingActionButton btnAntCPU;
+    private String modelo,serie,largo,ancho,alto,procesador,ram,
+    alimentacion,ssd,hdd,vga,hdmi,usb,dvi,dp,dvdr,observaciones;
 
     Button btnPDFCPU;
 
@@ -38,11 +40,7 @@ public class CPU2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cpu2);
 
-
         btnPDFCPU = findViewById(R.id.btnPDFCPU);
-
-
-
 
         if(checkPermission()) {
             Toast.makeText(this, "Permiso Aceptado", Toast.LENGTH_LONG).show();
@@ -114,6 +112,11 @@ public class CPU2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 230, 24, false);
         canvas.drawBitmap(bitmapEscala, 104,129 , paint);
 
+        //Modelo INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(modelo+"", 107, 144, titulo);
+
         //NUMERO SERIE
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
@@ -123,6 +126,11 @@ public class CPU2 extends AppCompatActivity {
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 135, 24, false);
         canvas.drawBitmap(bitmapEscala, 417,129 , paint);
+
+        //NUMERO SERIE INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(serie+"", 420, 144, titulo);
 
         //Largo
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -134,6 +142,11 @@ public class CPU2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 24, false);
         canvas.drawBitmap(bitmapEscala, 104, 159, paint);
 
+        //Largo INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(largo+"", 107, 174, titulo);
+
         //Ancho
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
@@ -143,6 +156,11 @@ public class CPU2 extends AppCompatActivity {
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 24, false);
         canvas.drawBitmap(bitmapEscala, 289, 159, paint);
+
+        //Ancho INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(ancho+"", 292, 174, titulo);
 
         //Alto
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -154,6 +172,11 @@ public class CPU2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 24, false);
         canvas.drawBitmap(bitmapEscala, 459, 159, paint);
 
+        //Alto IFNO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(alto+"", 462, 174, titulo);
+
         //Procesador
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
@@ -163,6 +186,11 @@ public class CPU2 extends AppCompatActivity {
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 240, 24, false);
         canvas.drawBitmap(bitmapEscala, 118, 189, paint);
+
+        //Procesador INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(procesador+"", 121, 204, titulo);
 
         //RAM
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -174,6 +202,11 @@ public class CPU2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 130, 24, false);
         canvas.drawBitmap(bitmapEscala, 422, 189, paint);
 
+        //RAM INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(ram+"", 425, 204, titulo);
+
         //Alimentacion
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
@@ -184,7 +217,12 @@ public class CPU2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 150, 24, false);
         canvas.drawBitmap(bitmapEscala, 133, 219, paint);
 
-        //SSD final
+        //Alimentacion INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(alimentacion+"", 136, 234, titulo);
+
+        //SSD
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
         canvas.drawText("SSD", 300, 234, titulo);
@@ -193,6 +231,11 @@ public class CPU2 extends AppCompatActivity {
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
         canvas.drawBitmap(bitmapEscala, 332, 219, paint);
+
+        //SSD INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(ssd+"", 335, 234, titulo);
 
         //HDD final
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -204,6 +247,11 @@ public class CPU2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
         canvas.drawBitmap(bitmapEscala, 472, 219, paint);
 
+        //HDD INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(hdd+"", 475, 234, titulo);
+
         //VGA
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
@@ -213,6 +261,11 @@ public class CPU2 extends AppCompatActivity {
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
         canvas.drawBitmap(bitmapEscala, 80, 249, paint);
+
+        //VGA INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(vga+"", 83, 264, titulo);
 
         //HDMI
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -224,6 +277,11 @@ public class CPU2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
         canvas.drawBitmap(bitmapEscala, 279, 249, paint);
 
+        //HDMI INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(hdmi+"", 282, 264, titulo);
+
         //USB
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
@@ -233,6 +291,11 @@ public class CPU2 extends AppCompatActivity {
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
         canvas.drawBitmap(bitmapEscala, 472, 249, paint);
+
+        //USB INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(usb+"", 475, 264, titulo);
 
         //DVI
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -244,6 +307,11 @@ public class CPU2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
         canvas.drawBitmap(bitmapEscala, 80, 279, paint);
 
+        //DVI IFNO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(dvi+"", 83, 294, titulo);
+
         //DP
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
@@ -253,6 +321,11 @@ public class CPU2 extends AppCompatActivity {
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
         canvas.drawBitmap(bitmapEscala, 279, 279, paint);
+
+        //DP IFNO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(dp+"", 282, 294, titulo);
 
         //DVDR
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -264,6 +337,11 @@ public class CPU2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 24, 24, false);
         canvas.drawBitmap(bitmapEscala, 500, 279, paint);
 
+        //DVDR INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(dvdr+"", 503, 294, titulo);
+
         //Observaciones
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
@@ -273,6 +351,11 @@ public class CPU2 extends AppCompatActivity {
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 405, 75, false);
         canvas.drawBitmap(bitmapEscala, 147, 309, paint);
+
+        //Observaciones
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(observaciones+"", 150, 333, titulo);
 
         //FRONTAL
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
