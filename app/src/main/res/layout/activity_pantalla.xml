@@ -139,7 +139,7 @@
                 android:layout_height="match_parent" />
 
             <EditText
-                android:id="@+id/etLargoPantalla2"
+                android:id="@+id/etPulgadas"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="40"
@@ -166,7 +166,7 @@
             android:paddingBottom="15dp">
 
             <Spinner
-                android:id="@+id/spAliment"
+                android:id="@+id/spAlimentacion"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"
@@ -178,7 +178,7 @@
                 android:layout_height="match_parent" />
 
             <Spinner
-                android:id="@+id/spPantalla"
+                android:id="@+id/spSO"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="48"

@@ -6,11 +6,283 @@
     android:layout_height="match_parent"
     tools:context=".Teclado">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAntMovil6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="@color/Green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.94"
+        app:srcCompat="@drawable/flechaizq" />
+
+    <Button
+        android:id="@+id/btnPDFmoviliario4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#74AB37"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="Exportar PDF"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.939" />
+
+    <ImageView
+        android:id="@+id/ivMovil2Logo4"
+        android:layout_width="601dp"
+        android:layout_height="598dp"
+        android:alpha="0.30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hmlogo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="40dp"
+        android:paddingTop="70dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="20dp"
+        tools:layout_editor_absoluteX="-2dp">
+
+        <LinearLayout
+            android:id="@+id/lyDimensiones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp">
+
+            <EditText
+                android:id="@+id/etLargoPantalla"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Largo"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:text="cm"
+                android:textSize="20sp"
+                android:translationY="11dp" />
+
+            <EditText
+                android:id="@+id/etAnchoPantalla"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Ancho"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:text="cm"
+                android:textSize="20sp"
+                android:translationY="11dp" />
+
+            <EditText
+                android:id="@+id/etAltoPantalla"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Alto"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:text="cm"
+                android:textSize="20sp"
+                android:translationY="11dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp">
+
+            <Spinner
+                android:id="@+id/spAlimentacion"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="48"
+                android:background="@drawable/spinner_background" />
+
+            <TextView
+                android:id="@+id/separador3"
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <Spinner
+                android:id="@+id/spSO"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="48"
+                android:background="@drawable/spinner_background" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvEnumMovil4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona las imagenes de la galeria"
+        android:textColor="@color/Black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26999998" />
+
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Teclado"
-        tools:layout_editor_absoluteX="204dp"
-        tools:layout_editor_absoluteY="262dp" />
+        android:text="(Los campos * Son obligatorios)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEnumMovil4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/etObservaMoviliario5"
+        android:layout_width="500dp"
+        android:layout_height="250dp"
+        android:background="@drawable/notes_background"
+        android:hint="Observaciones..."
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.216" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39999998">
+
+        =======
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/tvFrontPantalla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingRight="50dp"
+                android:text="Frontal*"
+                android:textColor="@color/Black"
+                android:textIsSelectable="false"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/ivFoto1"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.5"
+                app:srcCompat="@drawable/foto" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/tvNSPantalla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingRight="50dp"
+                android:text="N / S  *  "
+                android:textColor="@color/Black"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/ivFoto3"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.5"
+                app:srcCompat="@drawable/foto" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/tvIncidentPantalla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingRight="10dp"
+                android:text="Incidencias "
+                android:textColor="@color/Black"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/ivFoto5"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_weight="0.5"
+                app:srcCompat="@drawable/foto" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
