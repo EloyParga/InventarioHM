@@ -38,14 +38,15 @@ import java.io.FileOutputStream;
 
 public class Moviliario2 extends AppCompatActivity {
     FloatingActionButton btnAntMovil2;
-    public String descripcionMueble,largo,ancho,alto,cantidad,
-            ubicacion,precioI,precioA,notas,observaciones;
+    public String descripcionMueble,largo,ancho,alto,cantidad,fecha,
+            ubicacion,precioI,precioA,notas,observaciones,numSerie;
 
     Button btnPDFmoviliario;
 
     private File f;
 
     private EditText etObservaMoviliario2;
+
 
 
     @Override
@@ -55,19 +56,19 @@ public class Moviliario2 extends AppCompatActivity {
         etObservaMoviliario2 = findViewById(R.id.etObservaMoviliario2);
 
 
-        Bundle b = getIntent().getExtras();
-        String numSerie = b.getString("numSerie");
-        String fecha = b.getString("fecha" );
-        String descripcion = b.getString("descripcion" );
-        String largo = b.getString("largo" );
-        String ancho = b.getString("ancho" );
-        String alto = b.getString("alto" );
-        String cantidad = b.getString("cantidad" );
-        String ubicacion = b.getString("ubicacion" );
-        String precioInicial = b.getString("precioInicial" );
-        String precioActual = b.getString("precioActual" );
-        String notas = b.getString("notas" );
-
+         Bundle b = getIntent().getExtras();
+         numSerie = b.getString("numSerie");
+         fecha = b.getString("fecha" );
+         descripcionMueble = b.getString("descripcion" );
+         largo = b.getString("largo" );
+         ancho = b.getString("ancho" );
+         alto = b.getString("alto" );
+         cantidad = b.getString("cantidad" );
+         ubicacion = b.getString("ubicacion" );
+         precioI = b.getString("precioInicial" );
+         precioA = b.getString("precioActual" );
+         notas = b.getString("notas" );
+         observaciones = etObservaMoviliario2.getText().toString();
 
 
         btnAntMovil2 = findViewById(R.id.btnAntMovil2);
@@ -138,7 +139,8 @@ public class Moviliario2 extends AppCompatActivity {
         //FECHA
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
-        canvas.drawText("00/00/00", 420, 79, titulo);
+
+        canvas.drawText(fecha, 420, 79, titulo);
 
         //Descripcion
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
