@@ -38,6 +38,8 @@ import java.io.FileOutputStream;
 
 public class Moviliario2 extends AppCompatActivity {
     FloatingActionButton btnAntMovil2;
+    public String descripcionMueble,largo,ancho,alto,cantidad,
+            ubicacion,precioI,precioA,notas,observaciones;
 
     Button btnPDFmoviliario;
 
@@ -162,6 +164,11 @@ public class Moviliario2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 417, 23, false);
         canvas.drawBitmap(bitmapEscala, 129, 120, paint);
 
+        //Descripcion INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(descripcionMueble+"", 132, 135, titulo);
+
         //Largo
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
@@ -171,6 +178,11 @@ public class Moviliario2 extends AppCompatActivity {
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 22, false);
         canvas.drawBitmap(bitmapEscala, 105, 151, paint);
+
+        // LARGO INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(largo+"", 108, 162, titulo);
 
         //Ancho
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -182,6 +194,11 @@ public class Moviliario2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 22, false);
         canvas.drawBitmap(bitmapEscala, 277, 151, paint);
 
+        //Ancho INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(ancho+"", 280, 162, titulo);
+
         //Alto
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
@@ -191,6 +208,11 @@ public class Moviliario2 extends AppCompatActivity {
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 22, false);
         canvas.drawBitmap(bitmapEscala, 453, 151, paint);
+
+        //Alto Info
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(alto+"", 456, 162, titulo);
 
         //Cantidad
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -202,6 +224,11 @@ public class Moviliario2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 123, 22, false);
         canvas.drawBitmap(bitmapEscala, 108, 180, paint);
 
+        //Cantidad INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(cantidad+"", 111, 191, titulo);
+
         //Ubicacion
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
@@ -211,6 +238,11 @@ public class Moviliario2 extends AppCompatActivity {
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 231, 22, false);
         canvas.drawBitmap(bitmapEscala, 315, 180, paint);
+
+        //Ubicacion INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(ubicacion+"", 318, 191, titulo);
 
         //Precio inicial
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -222,6 +254,11 @@ public class Moviliario2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 152, 22, false);
         canvas.drawBitmap(bitmapEscala, 135, 209, paint);
 
+        //Precio inicial INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(precioI+"", 138, 222, titulo);
+
         //Precio final
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
@@ -231,6 +268,11 @@ public class Moviliario2 extends AppCompatActivity {
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 152, 22, false);
         canvas.drawBitmap(bitmapEscala, 394, 209, paint);
+
+        //Precio final INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(precioA+"", 397, 222, titulo);
 
         //Notas
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -242,6 +284,11 @@ public class Moviliario2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 447, 70, false);
         canvas.drawBitmap(bitmapEscala, 99, 239, paint);
 
+        //Notas info
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(notas+"", 102, 250, titulo);
+
         //Observaciones
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
@@ -251,6 +298,11 @@ public class Moviliario2 extends AppCompatActivity {
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 400, 75, false);
         canvas.drawBitmap(bitmapEscala, 146, 318, paint);
+
+        //Observaciones
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(observaciones+"", 149, 330, titulo);
 
         //FRONTAL
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
