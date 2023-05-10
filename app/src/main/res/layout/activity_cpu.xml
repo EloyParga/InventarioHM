@@ -421,7 +421,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/etProcsadorCPU"
+            android:id="@+id/etCant"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -436,7 +436,7 @@
             android:layout_weight="3" />
 
         <EditText
-            android:id="@+id/etRAMCPU"
+            android:id="@+id/etUbi"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_weight="1"

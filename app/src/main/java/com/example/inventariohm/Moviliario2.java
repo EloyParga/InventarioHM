@@ -30,6 +30,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import android.os.Environment;
 import android.text.TextPaint;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.File;
@@ -42,11 +43,29 @@ public class Moviliario2 extends AppCompatActivity {
 
     private File f;
 
+    private EditText etObservaMoviliario2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moviliario2);
+        etObservaMoviliario2 = findViewById(R.id.etObservaMoviliario2);
+
+
+        Bundle b = getIntent().getExtras();
+        String numSerie = b.getString("numSerie");
+        String fecha = b.getString("fecha" );
+        String descripcion = b.getString("descripcion" );
+        String largo = b.getString("largo" );
+        String ancho = b.getString("ancho" );
+        String alto = b.getString("alto" );
+        String cantidad = b.getString("cantidad" );
+        String ubicacion = b.getString("ubicacion" );
+        String precioInicial = b.getString("precioInicial" );
+        String precioActual = b.getString("precioActual" );
+        String notas = b.getString("notas" );
+
 
 
         btnAntMovil2 = findViewById(R.id.btnAntMovil2);

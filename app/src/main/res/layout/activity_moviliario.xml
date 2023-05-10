@@ -178,12 +178,12 @@
                 android:paddingTop="30dp">
 
                 <EditText
-                    android:id="@+id/etProcsadorCPU"
+                    android:id="@+id/etCant"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="Unidades"
+                    android:hint="Cantidad"
                     android:inputType="number" />
 
                 <TextView
@@ -196,7 +196,7 @@
                     android:translationY="11dp" />
 
                 <EditText
-                    android:id="@+id/etRAMCPU"
+                    android:id="@+id/etUbi"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
                     android:layout_weight="1"
