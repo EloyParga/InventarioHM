@@ -57,7 +57,7 @@
                         android:onClick="BtnMueble"
                         android:paddingTop="20dp"
                         android:paddingBottom="20dp"
-                        android:text="MOVILIARIO"
+                        android:text="MOBILIARIO"
                         android:textColor="#000000"
                         android:textSize="36sp"
                         app:cornerRadius="30dp" />

@@ -28,6 +28,8 @@ import java.io.FileOutputStream;
 
 public class Pantalla2 extends AppCompatActivity {
     Button btnPDFmoviliario3;
+    private String modelo,serie,fecha,largo,ancho,alto, resolucion,pulgadas,
+            alimentacion,tipopantalla,vga,hdmi,usb,dvi,dp,dvdr,observaciones;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,43 +85,59 @@ public class Pantalla2 extends AppCompatActivity {
 
         //DIRECCION
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("C. Gran Capitán, 52, Gijón", 43, 80, titulo);
+        titulo.setTextSize(10);
+        canvas.drawText("Cl. Gran Capitán, 52, Gijón", 43, 80, titulo);
 
 
         //CORREO Y TELEFONO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("985 66 54 41   hm@hazmaker.org", 222, 80, titulo);
 
-        //FECHA
-        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("00/00/00", 420, 80, titulo);
 
         //Modelo
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("Modelo", 43, 144, titulo);
+        titulo.setTextSize(10);
+        canvas.drawText("Modelo".toUpperCase(), 43, 144, titulo);
 
         // Modelo Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 230, 24, false);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 170, 24, false);
         canvas.drawBitmap(bitmapEscala, 104,129 , paint);
+
+        //Modelo INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(modelo+"", 107, 144, titulo);
 
         //NUMERO SERIE
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("Nº Serie", 360, 144, titulo);
+        titulo.setTextSize(10);
+        canvas.drawText("Nº Serie", 286, 144, titulo);
 
         // Numero Serie Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 135, 24, false);
-        canvas.drawBitmap(bitmapEscala, 417,129 , paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 24, false);
+        canvas.drawBitmap(bitmapEscala, 343,129 , paint);
+
+        //NUMERO SERIE INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(serie+"", 346, 144, titulo);
+
+        // FECHA Banner
+        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 90, 24, false);
+        canvas.drawBitmap(bitmapEscala, 462,129 , paint);
+
+        //FECHA INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTextSize(10);
+        canvas.drawText(fecha+"", 465, 144, titulo);
 
         //Largo
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("Largo", 43, 174, titulo);
 
         // Largo Banner
@@ -127,9 +145,14 @@ public class Pantalla2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 24, false);
         canvas.drawBitmap(bitmapEscala, 104, 159, paint);
 
+        //Largo INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(largo+"", 107, 174, titulo);
+
         //Ancho
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("Ancho", 233, 174, titulo);
 
         // Ancho Banner
@@ -137,9 +160,14 @@ public class Pantalla2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 24, false);
         canvas.drawBitmap(bitmapEscala, 289, 159, paint);
 
+        //Ancho INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(ancho+"", 292, 174, titulo);
+
         //Alto
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("Alto", 420, 174, titulo);
 
         // Alto Banner
@@ -147,9 +175,14 @@ public class Pantalla2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 24, false);
         canvas.drawBitmap(bitmapEscala, 459, 159, paint);
 
+        //Alto INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(alto+"", 462, 174, titulo);
+
         //RESOLUCION
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("Resolucion", 43, 204, titulo);
 
         // Resolucion Banner
@@ -157,9 +190,14 @@ public class Pantalla2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 170, 24, false);
         canvas.drawBitmap(bitmapEscala, 125, 189, paint);
 
+        //RESOLUCION INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(resolucion+"", 128, 204, titulo);
+
         //Pulgadas
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("RAM", 315, 204, titulo);
 
         // Pulgadas Banner
@@ -167,9 +205,14 @@ public class Pantalla2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 170, 24, false);
         canvas.drawBitmap(bitmapEscala, 382, 189, paint);
 
+        //Pulgadas ifno
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(pulgadas+"", 385, 204, titulo);
+
         //Alimentacion
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("Alimentacion", 43, 234, titulo);
 
         //Alimentacion Banner
@@ -177,9 +220,14 @@ public class Pantalla2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 150, 24, false);
         canvas.drawBitmap(bitmapEscala, 130, 219, paint);
 
+        //Alimentacion INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(alimentacion+"", 133, 234, titulo);
+
         //Tipo final
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("Tipo de Pantalla", 300, 234, titulo);
 
         // Tipo Banner
@@ -187,10 +235,15 @@ public class Pantalla2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 150, 24, false);
         canvas.drawBitmap(bitmapEscala, 402, 219, paint);
 
+        //Tipo INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(tipopantalla+"", 405, 234, titulo);
+
 
         //VGA
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("VGA", 43, 264, titulo);
 
         // VGA Banner
@@ -198,9 +251,14 @@ public class Pantalla2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
         canvas.drawBitmap(bitmapEscala, 80, 249, paint);
 
+        //VGA Info
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(vga+"", 83, 264, titulo);
+
         //HDMI
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("HDMI", 242, 264, titulo);
 
         // HDMI Banner
@@ -208,9 +266,14 @@ public class Pantalla2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
         canvas.drawBitmap(bitmapEscala, 279, 249, paint);
 
+        //HDMI info
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(hdmi+"", 282, 264, titulo);
+
         //USB
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("USB", 435, 279, titulo);
 
         // USB Banner
@@ -218,9 +281,14 @@ public class Pantalla2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
         canvas.drawBitmap(bitmapEscala, 472, 264, paint);
 
+        //USB INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(usb+"", 475, 279, titulo);
+
         //DVI
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("DVI", 43, 294, titulo);
 
         // DVI Banner
@@ -228,9 +296,14 @@ public class Pantalla2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
         canvas.drawBitmap(bitmapEscala, 80, 279, paint);
 
+        //DVI INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(dvi+"", 83, 294, titulo);
+
         //DP
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("DP", 242, 294, titulo);
 
         // DP Banner
@@ -238,16 +311,26 @@ public class Pantalla2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
         canvas.drawBitmap(bitmapEscala, 279, 279, paint);
 
+        //DP INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(dp+"", 282, 294, titulo);
+
 
         //Observaciones
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("Observaciones", 43, 333, titulo);
 
         // Observaciones Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 405, 75, false);
         canvas.drawBitmap(bitmapEscala, 147, 309, paint);
+
+        //Observaciones
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(observaciones+"", 150, 333, titulo);
 
         //FRONTAL
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));

@@ -116,51 +116,57 @@ public class Moviliario2 extends AppCompatActivity {
 
         // Caja inicio
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 595, 60, false);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 595, 70, false);
         canvas.drawBitmap(bitmapEscala, 0, 43, paint);
 
         //LOGO
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 60, 60, false);
-        canvas.drawBitmap(bitmapEscala, 485, 43, paint);
+        canvas.drawBitmap(bitmapEscala, 492, 48, paint);
 
 
 
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("C. Gran Capitán, 52, Gijón", 60, 79, titulo);
+        titulo.setTextSize(10);
+        canvas.drawText("Cl. Gran Capitán, 52, Gijón".toUpperCase(), 60, 79, titulo);
 
 
         //CORREO Y TELEFONO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("985 66 54 41   hm@hazmaker.org", 222, 79, titulo);
+        titulo.setTextSize(10);
+        canvas.drawText("985 66 54 41   hm@hazmaker.org".toUpperCase(), 222, 79, titulo);
 
-        //FECHA
-        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
 
-        canvas.drawText(fecha, 420, 79, titulo);
 
         //Descripcion
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("Descripcion", 43, 135, titulo);
+        titulo.setTextSize(10);
+        canvas.drawText("Descripcion".toUpperCase(), 43, 135, titulo);
 
         // Descripcion Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 417, 23, false);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 290, 23, false);
         canvas.drawBitmap(bitmapEscala, 129, 120, paint);
 
-        //Descripcion INFO
+        // Fecha Banner
+        bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 22, false);
+        canvas.drawBitmap(bitmapEscala, 453, 120, paint);
+
+        //FECHA
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText(descripcionMueble+"", 132, 135, titulo);
+        canvas.drawText(fecha+"", 459, 135, titulo);
+
+        //Descripcion INFO
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+        titulo.setTextSize(10);
+        canvas.drawText(descripcionMueble.toUpperCase()+"", 132, 135, titulo);
 
         //Largo
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("Largo", 43, 162, titulo);
+        titulo.setTextSize(10);
+        canvas.drawText("Largo".toUpperCase(), 43, 162, titulo);
 
         // Largo Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -168,14 +174,14 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawBitmap(bitmapEscala, 105, 151, paint);
 
         // LARGO INFO
-        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
         canvas.drawText(largo+"", 108, 162, titulo);
 
         //Ancho
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("Ancho", 210, 162, titulo);
+        titulo.setTextSize(10);
+        canvas.drawText("Ancho".toUpperCase(), 210, 162, titulo);
 
         // Ancho Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -183,14 +189,14 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawBitmap(bitmapEscala, 277, 151, paint);
 
         //Ancho INFO
-        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
         canvas.drawText(ancho+"", 280, 162, titulo);
 
         //Alto
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("Alto", 389, 162, titulo);
+        titulo.setTextSize(10);
+        canvas.drawText("Alto".toUpperCase(), 389, 162, titulo);
 
         // Alto Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -198,14 +204,14 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawBitmap(bitmapEscala, 453, 151, paint);
 
         //Alto Info
-        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
         canvas.drawText(alto+"", 456, 162, titulo);
 
         //Cantidad
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("Cantidad", 43, 191, titulo);
+        titulo.setTextSize(10);
+        canvas.drawText("Cantidad".toUpperCase(), 43, 191, titulo);
 
         // Cantidad Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -213,14 +219,14 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawBitmap(bitmapEscala, 108, 180, paint);
 
         //Cantidad INFO
-        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
         canvas.drawText(cantidad+"", 111, 191, titulo);
 
         //Ubicacion
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("Ubicacion", 240, 191, titulo);
+        titulo.setTextSize(10);
+        canvas.drawText("Ubicacion".toUpperCase(), 240, 191, titulo);
 
         // Ubicacion Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -228,14 +234,14 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawBitmap(bitmapEscala, 315, 180, paint);
 
         //Ubicacion INFO
-        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(ubicacion+"", 318, 191, titulo);
+        canvas.drawText(ubicacion.toUpperCase()+"", 318, 191, titulo);
 
         //Precio inicial
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("Precio Inicial", 43, 222, titulo);
+        titulo.setTextSize(10);
+        canvas.drawText("Precio Inicial".toUpperCase(), 43, 222, titulo);
 
         // Precio inicial Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -243,14 +249,14 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawBitmap(bitmapEscala, 135, 209, paint);
 
         //Precio inicial INFO
-        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
         canvas.drawText(precioI+"", 138, 222, titulo);
 
         //Precio final
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("Precio final", 300, 222, titulo);
+        titulo.setTextSize(10);
+        canvas.drawText("Precio final".toUpperCase(), 300, 222, titulo);
 
         // Precio final Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -258,14 +264,14 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawBitmap(bitmapEscala, 394, 209, paint);
 
         //Precio final INFO
-        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
         canvas.drawText(precioA+"", 397, 222, titulo);
 
         //Notas
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("Notas", 43, 250, titulo);
+        titulo.setTextSize(10);
+        canvas.drawText("Notas".toUpperCase(), 43, 250, titulo);
 
         // Notas Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -273,14 +279,14 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawBitmap(bitmapEscala, 99, 239, paint);
 
         //Notas info
-        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(notas+"", 102, 250, titulo);
+        canvas.drawText(notas.toUpperCase()+"", 102, 250, titulo);
 
         //Observaciones
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
-        canvas.drawText("Observaciones", 43, 330, titulo);
+        titulo.setTextSize(10);
+        canvas.drawText("Observaciones".toUpperCase(), 43, 330, titulo);
 
         // Observaciones Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -288,13 +294,13 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawBitmap(bitmapEscala, 146, 318, paint);
 
         //Observaciones INFO
-        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(observaciones+"", 149, 330, titulo);
+        canvas.drawText(observaciones.toUpperCase()+"", 149, 330, titulo);
 
         //FRONTAL
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("FRONTAL", 60, 420, titulo);
 
         //IMAGEN FRONTAL
@@ -304,7 +310,7 @@ public class Moviliario2 extends AppCompatActivity {
 
         //Trasera
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("TRASERA", 277, 420, titulo);
 
         //IMAGEN Trasera
@@ -314,7 +320,7 @@ public class Moviliario2 extends AppCompatActivity {
 
         //Interna
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("INTERNA", 473, 420, titulo);
 
         //IMAGEN Interna
@@ -324,7 +330,7 @@ public class Moviliario2 extends AppCompatActivity {
 
         //Ubicacion
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("UBICACION", 160, 539, titulo);
 
         //IMAGEN Ubicacion
@@ -334,7 +340,7 @@ public class Moviliario2 extends AppCompatActivity {
 
         //Incidencias
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(13);
+        titulo.setTextSize(10);
         canvas.drawText("INCIDENCIAS", 365, 539, titulo);
 
         //IMAGEN incidencias
@@ -350,7 +356,7 @@ public class Moviliario2 extends AppCompatActivity {
         //FIRMA
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
-        canvas.drawText("FDO. Operador", 258, 678, titulo);
+        canvas.drawText("FDO.", 258, 678, titulo);
 
 
         // Espacio Firma
