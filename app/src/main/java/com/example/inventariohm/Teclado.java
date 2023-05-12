@@ -21,6 +21,8 @@ import android.os.Environment;
 import android.text.TextPaint;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.io.File;
@@ -29,12 +31,26 @@ import java.io.FileOutputStream;
 public class Teclado extends AppCompatActivity {
 
     Button btnPDFmoviliario4;
+    EditText etLargoPantalla,etAnchoPantalla,etAltoPantalla,etObservaMoviliario5;
+    Spinner spConectividad,spIdioma;
     private String modelo,serie,fecha,largo,ancho,alto,idioma,conexion,observacion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teclado);
         btnPDFmoviliario4 = findViewById(R.id.btnPDFmoviliario4);
+        etLargoPantalla = findViewById(R.id.etLargoPantalla);
+        etAnchoPantalla = findViewById(R.id.etAnchoPantalla);
+        etAltoPantalla = findViewById(R.id.etAltoPantalla);
+        spConectividad = findViewById(R.id.spConectividad);
+        spIdioma = findViewById(R.id.spIdioma);
+
+
+        Bundle b = getIntent().getExtras();
+        String modelo2 = b.getString("modelo");
+        String numSerie2 = b.getString("numSerie");
+        String fecha2= b.getString("fecha");
+
 
 
 
@@ -51,10 +67,22 @@ public class Teclado extends AppCompatActivity {
         btnPDFmoviliario4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                largo=etLargoPantalla.getText().toString().toUpperCase();
+                ancho=etAnchoPantalla.getText().toString().toUpperCase();
+                alto=etAltoPantalla.getText().toString().toUpperCase();
+                conexion=spConectividad.getSelectedItem().toString().toUpperCase();
+                idioma=spIdioma.getSelectedItem().toString().toUpperCase();
+                observacion=etObservaMoviliario5.getText().toString().toUpperCase();
+                modelo=modelo2.toUpperCase();
+                serie=numSerie2.toUpperCase();
+                fecha=fecha2.toUpperCase();
+
                 crearPDFTeclado();
             }
         });
+
     }
+
 
     public void crearPDFTeclado(){
         PdfDocument pdfDocument = new PdfDocument();
@@ -108,7 +136,7 @@ public class Teclado extends AppCompatActivity {
         //Modelo INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(modelo+"", 107, 144, titulo);
+        canvas.drawText(modelo.toUpperCase(), 107, 144, titulo);
 
         //NUMERO SERIE
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -123,7 +151,7 @@ public class Teclado extends AppCompatActivity {
         //NUMERO SERIE INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(serie+"", 346, 144, titulo);
+        canvas.drawText(serie.toUpperCase(), 346, 144, titulo);
 
         // FECHA Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -133,7 +161,7 @@ public class Teclado extends AppCompatActivity {
         //FECHA
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText(fecha+"", 465, 144, titulo);
+        canvas.drawText(fecha.toUpperCase(), 465, 144, titulo);
 
         //Largo
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -148,7 +176,7 @@ public class Teclado extends AppCompatActivity {
         //Largo INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(largo+"", 107, 194, titulo);
+        canvas.drawText(largo.toUpperCase(), 107, 194, titulo);
 
         //Ancho
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -163,7 +191,7 @@ public class Teclado extends AppCompatActivity {
         //Ancho INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(ancho+"", 292, 194, titulo);
+        canvas.drawText(ancho.toUpperCase(), 292, 194, titulo);
 
         //Alto
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -178,7 +206,7 @@ public class Teclado extends AppCompatActivity {
         //Alto INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(alto+"", 462, 194, titulo);
+        canvas.drawText(alto.toUpperCase(), 462, 194, titulo);
 
         //Idioma
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -193,7 +221,7 @@ public class Teclado extends AppCompatActivity {
         //Idioma INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(idioma+"", 128, 244, titulo);
+        canvas.drawText(idioma.toUpperCase(), 128, 244, titulo);
 
         //Tipo Conexion
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -208,7 +236,7 @@ public class Teclado extends AppCompatActivity {
         //Tipo Conexion INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(conexion+"", 385, 244, titulo);
+        canvas.drawText(conexion.toUpperCase(), 385, 244, titulo);
 
 
         //Observaciones
@@ -224,7 +252,7 @@ public class Teclado extends AppCompatActivity {
         //Observaciones INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(observacion+"", 148, 294, titulo);
+        canvas.drawText(observacion.toUpperCase(), 148, 294, titulo);
 
         //Incidencias
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));

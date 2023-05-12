@@ -21,6 +21,7 @@ import android.os.Environment;
 import android.text.TextPaint;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -30,6 +31,7 @@ import java.io.FileOutputStream;
 
 public class CPU2 extends AppCompatActivity {
     FloatingActionButton btnAntCPU;
+    EditText etObservaMoviliario;
     private String modelo,serie,fecha,largo,ancho,alto,procesador,ram,
     alimentacion,ssd,hdd,vga,hdmi,usb,dvi,dp,dvdr,observaciones;
 
@@ -39,6 +41,29 @@ public class CPU2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cpu2);
+
+        etObservaMoviliario= findViewById(R.id.etObservaMoviliario);
+
+        Bundle b = getIntent().getExtras();
+        modelo = b.getString("modelo");
+        serie = b.getString("numSerie");
+        fecha= b.getString("fecha");
+        largo= b.getString("largo");
+        ancho= b.getString("ancho");
+        alto= b.getString("alto");
+        procesador= b.getString("procesador");
+        ram= b.getString("ram");
+        alimentacion= b.getString("grafica");
+        ssd= b.getString("ssd");
+        hdd= b.getString("hdd");
+        vga= b.getString("vga");
+        hdmi= b.getString("hdmi");
+        usb= b.getString("usb");
+        dvi= b.getString("dvi");
+        dp= b.getString("dp");
+        dvdr= b.getString("dvdr");
+
+
 
         btnPDFCPU = findViewById(R.id.btnPDFCPU);
 
@@ -54,6 +79,8 @@ public class CPU2 extends AppCompatActivity {
         btnPDFCPU.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                observaciones=etObservaMoviliario.getText().toString();
+
                 crearPDFCPU();
             }
         });
@@ -109,7 +136,7 @@ public class CPU2 extends AppCompatActivity {
         //Modelo INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText((modelo+""), 107, 144, titulo);
+        canvas.drawText((modelo.toUpperCase()), 107, 144, titulo);
 
         //NUMERO SERIE
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -124,7 +151,7 @@ public class CPU2 extends AppCompatActivity {
         //NUMERO SERIE INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText((serie+""), 346, 144, titulo);
+        canvas.drawText((serie.toUpperCase()), 346, 144, titulo);
 
         // FECHA Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -134,7 +161,7 @@ public class CPU2 extends AppCompatActivity {
         //FECHA
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText(fecha+"", 465, 144, titulo);
+        canvas.drawText(fecha.toUpperCase(), 465, 144, titulo);
 
         //Largo
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -149,7 +176,7 @@ public class CPU2 extends AppCompatActivity {
         //Largo INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(largo+"", 107, 174, titulo);
+        canvas.drawText(largo.toUpperCase(), 107, 174, titulo);
 
         //Ancho
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -164,7 +191,7 @@ public class CPU2 extends AppCompatActivity {
         //Ancho INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(ancho+"", 292, 174, titulo);
+        canvas.drawText(ancho.toUpperCase(), 292, 174, titulo);
 
         //Alto
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -179,7 +206,7 @@ public class CPU2 extends AppCompatActivity {
         //Alto IFNO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(alto+"", 462, 174, titulo);
+        canvas.drawText(alto.toUpperCase(), 462, 174, titulo);
 
         //Procesador
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -194,7 +221,7 @@ public class CPU2 extends AppCompatActivity {
         //Procesador INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText((procesador+""), 121, 204, titulo);
+        canvas.drawText((procesador.toUpperCase()), 121, 204, titulo);
 
         //RAM
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -209,7 +236,7 @@ public class CPU2 extends AppCompatActivity {
         //RAM INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(ram+"", 425, 204, titulo);
+        canvas.drawText(ram.toUpperCase(), 425, 204, titulo);
 
         //Alimentacion
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -224,7 +251,7 @@ public class CPU2 extends AppCompatActivity {
         //Alimentacion INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(alimentacion+"", 136, 234, titulo);
+        canvas.drawText(alimentacion.toUpperCase(), 136, 234, titulo);
 
         //SSD
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -239,7 +266,7 @@ public class CPU2 extends AppCompatActivity {
         //SSD INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(ssd+"", 335, 234, titulo);
+        canvas.drawText(ssd.toUpperCase(), 335, 234, titulo);
 
         //HDD final
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -254,7 +281,7 @@ public class CPU2 extends AppCompatActivity {
         //HDD INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(hdd+"", 475, 234, titulo);
+        canvas.drawText(hdd.toUpperCase(), 475, 234, titulo);
 
         //VGA
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -269,7 +296,7 @@ public class CPU2 extends AppCompatActivity {
         //VGA INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(vga+"", 83, 264, titulo);
+        canvas.drawText(vga.toUpperCase(), 83, 264, titulo);
 
         //HDMI
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -284,7 +311,7 @@ public class CPU2 extends AppCompatActivity {
         //HDMI INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(hdmi+"", 282, 264, titulo);
+        canvas.drawText(hdmi.toUpperCase(), 282, 264, titulo);
 
         //USB
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -299,7 +326,7 @@ public class CPU2 extends AppCompatActivity {
         //USB INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(usb+"", 475, 264, titulo);
+        canvas.drawText(usb.toUpperCase(), 475, 264, titulo);
 
         //DVI
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -314,7 +341,7 @@ public class CPU2 extends AppCompatActivity {
         //DVI IFNO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(dvi+"", 83, 294, titulo);
+        canvas.drawText(dvi.toUpperCase(), 83, 294, titulo);
 
         //DP
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -329,7 +356,7 @@ public class CPU2 extends AppCompatActivity {
         //DP IFNO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(dp+"", 282, 294, titulo);
+        canvas.drawText(dp.toUpperCase(), 282, 294, titulo);
 
         //DVDR
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -344,7 +371,7 @@ public class CPU2 extends AppCompatActivity {
         //DVDR INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(dvdr+"", 503, 294, titulo);
+        canvas.drawText(dvdr.toUpperCase(), 503, 294, titulo);
 
         //Observaciones
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -359,7 +386,7 @@ public class CPU2 extends AppCompatActivity {
         //Observaciones
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(observaciones+"", 150, 333, titulo);
+        canvas.drawText(observaciones.toUpperCase(), 150, 333, titulo);
 
         //FRONTAL
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));

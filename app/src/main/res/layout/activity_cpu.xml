@@ -79,7 +79,7 @@
             android:textSize="20sp" />
 
         <CheckBox
-            android:id="@+id/checkBox2"
+            android:id="@+id/cbDVDR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -231,7 +231,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/editTextNumber3"
+            android:id="@+id/etVGACPU"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
@@ -259,7 +259,7 @@
             android:layout_height="60dp"
             android:layout_weight="4.5"
             android:ems="10"
-            android:hint="Grafica"
+            android:hint="Alimentacion"
             android:inputType="text"
             android:translationY="10dp" />
 
@@ -281,7 +281,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/etGraficaCPU3"
+                android:id="@+id/etHDD"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -290,7 +290,7 @@
                 android:inputType="number" />
 
             <EditText
-                android:id="@+id/etGraficaCPU2"
+                android:id="@+id/etSSD"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -425,7 +425,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/etCant"
+            android:id="@+id/etCantidad"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -440,7 +440,7 @@
             android:layout_weight="3" />
 
         <EditText
-            android:id="@+id/etUbi"
+            android:id="@+id/etUbicacion"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_weight="1"

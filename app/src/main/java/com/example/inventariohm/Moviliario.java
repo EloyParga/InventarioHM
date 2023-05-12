@@ -43,8 +43,8 @@ public class Moviliario extends AppCompatActivity {
         etLargoCPU = findViewById(R.id.etLargoCPU);
         etAnchoCPU = findViewById(R.id.etAnchoCPU);
         etAltoCPU = findViewById(R.id.etAltoCPU);
-        etCantidad = findViewById(R.id.etCant);
-        etUbicacion = findViewById(R.id.etUbi);
+        etCantidad = findViewById(R.id.etCantidad);
+        etUbicacion = findViewById(R.id.etUbicacion);
         etPIMoviliario = findViewById(R.id.etPIMoviliario);
         etPAMoviliario = findViewById(R.id.etPAMoviliario);
         etNotaMoviliario = findViewById(R.id.etNotaMoviliario);

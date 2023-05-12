@@ -21,6 +21,8 @@ import android.os.Environment;
 import android.text.TextPaint;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.io.File;
@@ -29,16 +31,27 @@ import java.io.FileOutputStream;
 public class Raton extends AppCompatActivity {
 
     Button btnPDFmoviliario2;
+
+    EditText etObservaMoviliario4,etPulgadas,etLargoPantalla,etAnchoPantalla,etAltoPantalla;
+    Spinner spConexion;
     private String modelo,fecha,serie,largo,ancho,alto,botones,conexion,observaciones;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raton);
         btnPDFmoviliario2 = findViewById(R.id.btnPDFmoviliario2);
+        etPulgadas = findViewById(R.id.etPulgadas);
+        etObservaMoviliario4 = findViewById(R.id.etObservaMoviliario4);
+        etLargoPantalla = findViewById(R.id.etLargoPantalla);
+        etAnchoPantalla = findViewById(R.id.etAnchoPantalla);
+        etAltoPantalla = findViewById(R.id.etAltoPantalla);
+        spConexion = findViewById(R.id.spConexion);
 
 
-
-
+        Bundle b = getIntent().getExtras();
+        String modelo2 = b.getString("modelo");
+        String numSerie2 = b.getString("numSerie");
+        String fecha2= b.getString("fecha");
         if(checkPermission()) {
             Toast.makeText(this, "Permiso Aceptado", Toast.LENGTH_LONG).show();
         } else {
@@ -51,6 +64,16 @@ public class Raton extends AppCompatActivity {
         btnPDFmoviliario2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                largo=etLargoPantalla.getText().toString().toUpperCase();
+                ancho=etAnchoPantalla.getText().toString().toUpperCase();
+                alto=etAltoPantalla.getText().toString().toUpperCase();
+                botones=etPulgadas.getText().toString().toUpperCase();
+                conexion=spConexion.getSelectedItem().toString().toUpperCase();
+                observaciones=etObservaMoviliario4.getText().toString().toUpperCase();
+                modelo=modelo2.toUpperCase();
+                serie=numSerie2.toUpperCase();
+                fecha=fecha2.toUpperCase();
+
                 crearPDFRaton();
             }
         });

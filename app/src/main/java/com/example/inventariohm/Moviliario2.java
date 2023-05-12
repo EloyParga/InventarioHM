@@ -68,7 +68,7 @@ public class Moviliario2 extends AppCompatActivity {
          precioI = b.getString("precioInicial" );
          precioA = b.getString("precioActual" );
          notas = b.getString("notas" );
-         observaciones = etObservaMoviliario2.getText().toString();
+
 
 
         btnAntMovil2 = findViewById(R.id.btnAntMovil2);
@@ -93,6 +93,7 @@ public class Moviliario2 extends AppCompatActivity {
         btnPDFmoviliario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                observaciones = etObservaMoviliario2.getText().toString().toUpperCase();
                 crearPDF();
             }
         });

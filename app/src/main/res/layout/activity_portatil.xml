@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".Portatil">
 
+    <EditText
+        android:id="@+id/etAlmacenamiento2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="550dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Almacenamiento"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/logo3" />
+
     <ImageView
         android:id="@+id/logo3"
         android:layout_width="match_parent"
@@ -328,7 +342,7 @@
                 android:layout_height="match_parent" />
 
             <EditText
-                android:id="@+id/etVoltaje2"
+                android:id="@+id/etIntensidad"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="33"

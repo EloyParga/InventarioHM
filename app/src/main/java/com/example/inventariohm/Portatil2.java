@@ -21,6 +21,7 @@ import android.os.Environment;
 import android.text.TextPaint;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.File;
@@ -28,6 +29,7 @@ import java.io.FileOutputStream;
 
 public class Portatil2 extends AppCompatActivity {
     private Button btnPDFCPU2;
+    private EditText etObservaMoviliario6;
     private String modelo,serie,fecha,largo,ancho,alto,procesador,pulgadas,RAM,
             grafica,so,alimentacion,idioma,pantalla,almacenamiento,voltaje,
             intensidad,vga, hdmi,usb,dvi,dp,dvdr,observaciones,ram;
@@ -38,7 +40,35 @@ public class Portatil2 extends AppCompatActivity {
         setContentView(R.layout.activity_portatil2);
         btnPDFCPU2 = findViewById(R.id.btnPDFCPU2);
 
+        etObservaMoviliario6=findViewById(R.id.etObservaMoviliario6);
 
+        Bundle b = getIntent().getExtras();
+        modelo = b.getString("modelo").toUpperCase();
+        serie=b.getString("numSerie").toUpperCase();
+        fecha=b.getString("fecha").toUpperCase();
+        largo=b.getString("largo").toUpperCase();
+        ancho=b.getString("ancho").toUpperCase();
+        alto=b.getString("alto").toUpperCase();
+        alto=b.getString("intensidad").toUpperCase();
+        procesador=b.getString("procesador").toUpperCase();
+        pulgadas=b.getString("pulgadas").toUpperCase();
+        RAM=b.getString("ram").toUpperCase();
+        grafica=b.getString("grafica").toUpperCase();
+        so=b.getString("so").toUpperCase();
+        alimentacion=b.getString("alimentacion").toUpperCase();
+        pantalla=b.getString("pantalla").toUpperCase();
+        voltaje=b.getString("voltaje").toUpperCase();
+        idioma=b.getString("idioma").toUpperCase();
+        vga=b.getString("vga").toUpperCase();
+        hdmi=b.getString("hdmi").toUpperCase();
+        usb=b.getString("usb").toUpperCase();
+        dvi=b.getString("dvi").toUpperCase();
+        dp=b.getString("dp").toUpperCase();
+        dvdr=b.getString("dvd").toUpperCase();
+        ram=b.getString("ram").toUpperCase();
+
+        almacenamiento=b.getString("alamacenamiento").toUpperCase();
+        intensidad=b.getString("intensidad").toUpperCase();
 
 
         if(checkPermission()) {
@@ -59,6 +89,7 @@ public class Portatil2 extends AppCompatActivity {
     }
 
     public void crearPDFPortatil(){
+        observaciones=etObservaMoviliario6.getText().toString();
         PdfDocument pdfDocument = new PdfDocument();
         Paint paint = new Paint();
         TextPaint titulo = new TextPaint();
@@ -88,19 +119,19 @@ public class Portatil2 extends AppCompatActivity {
         //DIRECCION
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Cl. Gran Capitán, 52, Gijón", 43, 80, titulo);
+        canvas.drawText("Cl. Gran Capitán, 52, Gijón".toUpperCase(), 43, 80, titulo);
 
 
         //CORREO Y TELEFONO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("985 66 54 41   hm@hazmaker.org", 222, 80, titulo);
+        canvas.drawText("985 66 54 41   hm@hazmaker.org".toUpperCase(), 222, 80, titulo);
 
 
         //Modelo
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Modelo", 43, 144, titulo);
+        canvas.drawText("Modelo".toUpperCase(), 43, 144, titulo);
 
         // Modelo Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -115,7 +146,7 @@ public class Portatil2 extends AppCompatActivity {
         //NUMERO SERIE
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Nº Serie", 286, 144, titulo);
+        canvas.drawText("Nº Serie".toUpperCase(), 286, 144, titulo);
 
         // Numero Serie Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -140,7 +171,7 @@ public class Portatil2 extends AppCompatActivity {
         //Largo
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Largo", 43, 174, titulo);
+        canvas.drawText("Largo".toUpperCase(), 43, 174, titulo);
 
         // Largo Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -155,7 +186,7 @@ public class Portatil2 extends AppCompatActivity {
         //Ancho
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Ancho", 233, 174, titulo);
+        canvas.drawText("Ancho".toUpperCase(), 233, 174, titulo);
 
         // Ancho Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -170,7 +201,7 @@ public class Portatil2 extends AppCompatActivity {
         //Alto
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Alto", 420, 174, titulo);
+        canvas.drawText("Alto".toUpperCase(), 420, 174, titulo);
 
         // Alto Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -185,7 +216,7 @@ public class Portatil2 extends AppCompatActivity {
         //Procesador
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Procesador", 43, 206, titulo);
+        canvas.drawText("Procesador".toUpperCase(), 43, 206, titulo);
 
         // Procesador Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -200,7 +231,7 @@ public class Portatil2 extends AppCompatActivity {
         //Pulgadas
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Pulgadas", 269, 206, titulo);
+        canvas.drawText("Pulgadas".toUpperCase(), 269, 206, titulo);
 
         // Pulgadas Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -215,7 +246,7 @@ public class Portatil2 extends AppCompatActivity {
         //RAM
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("RAM", 442, 206, titulo);
+        canvas.drawText("RAM".toUpperCase(), 442, 206, titulo);
 
         // RAM Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -225,12 +256,12 @@ public class Portatil2 extends AppCompatActivity {
         //RAM INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(ram+"", 487, 206, titulo);
+        canvas.drawText(RAM+"", 487, 206, titulo);
 
         //Grafica
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Grafica", 43, 236, titulo);
+        canvas.drawText("Grafica".toUpperCase(), 43, 236, titulo);
 
         //Grafica Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -245,7 +276,7 @@ public class Portatil2 extends AppCompatActivity {
         //SO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("S.O.:", 360, 234, titulo);
+        canvas.drawText("S.O.:".toUpperCase(), 360, 234, titulo);
 
         // SO  Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -260,7 +291,7 @@ public class Portatil2 extends AppCompatActivity {
         //Alimentacion
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Alimentacion", 43, 264, titulo);
+        canvas.drawText("Alimentacion".toUpperCase(), 43, 264, titulo);
 
         // Alimentacion Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -275,7 +306,7 @@ public class Portatil2 extends AppCompatActivity {
         //Idioma
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Idioma", 238, 264, titulo);
+        canvas.drawText("Idioma".toUpperCase(), 238, 264, titulo);
 
         // Idioma Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -290,7 +321,7 @@ public class Portatil2 extends AppCompatActivity {
         //Pantalla
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Pantalla", 393, 264, titulo);
+        canvas.drawText("Pantalla".toUpperCase(), 393, 264, titulo);
 
         // Pantalla Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -305,7 +336,7 @@ public class Portatil2 extends AppCompatActivity {
         //Almacenamiento
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Almacenamiento", 43, 294, titulo);
+        canvas.drawText("Almacenamiento".toUpperCase(), 43, 294, titulo);
 
         //Almacenamiento Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -315,12 +346,12 @@ public class Portatil2 extends AppCompatActivity {
         //Almacenamiento INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(alimentacion+"", 162, 294, titulo);
+        canvas.drawText(almacenamiento+"", 162, 294, titulo);
 
         //Voltaje
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Voltaje", 289, 294, titulo);
+        canvas.drawText("Voltaje".toUpperCase(), 289, 294, titulo);
 
         // Voltaje Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -335,7 +366,7 @@ public class Portatil2 extends AppCompatActivity {
         //Intensidad
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Intensidad", 411, 294, titulo);
+        canvas.drawText("Intensidad".toUpperCase(), 411, 294, titulo);
 
         // Intensidad Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -350,7 +381,7 @@ public class Portatil2 extends AppCompatActivity {
         //VGA
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("VGA", 43, 324, titulo);
+        canvas.drawText("VGA".toUpperCase(), 43, 324, titulo);
 
         // VGA Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -365,7 +396,7 @@ public class Portatil2 extends AppCompatActivity {
         //HDMI
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("HDMI", 242, 324, titulo);
+        canvas.drawText("HDMI".toUpperCase(), 242, 324, titulo);
 
         // HDMI Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -380,7 +411,7 @@ public class Portatil2 extends AppCompatActivity {
         //USB
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("USB", 435, 324, titulo);
+        canvas.drawText("USB".toUpperCase(), 435, 324, titulo);
 
         // USB Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -395,7 +426,7 @@ public class Portatil2 extends AppCompatActivity {
         //DVI
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("DVI", 43, 354, titulo);
+        canvas.drawText("DVI".toUpperCase(), 43, 354, titulo);
 
         // DVI Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -410,7 +441,7 @@ public class Portatil2 extends AppCompatActivity {
         //DP
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("DP", 242, 354, titulo);
+        canvas.drawText("DP".toUpperCase(), 242, 354, titulo);
 
         // DP Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -425,7 +456,7 @@ public class Portatil2 extends AppCompatActivity {
         //DVDR
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("DVDR", 435, 354, titulo);
+        canvas.drawText("DVDR".toUpperCase(), 435, 354, titulo);
 
         // DVDR Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -440,7 +471,7 @@ public class Portatil2 extends AppCompatActivity {
         //Observaciones
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Observaciones", 43, 393, titulo);
+        canvas.drawText("Observaciones".toUpperCase(), 43, 393, titulo);
 
         // Observaciones Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -455,7 +486,7 @@ public class Portatil2 extends AppCompatActivity {
         //FRONTAL
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("FRONTAL", 179, 433, titulo);
+        canvas.drawText("FRONTAL".toUpperCase(), 179, 433, titulo);
 
         //IMAGEN FRONTAL
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
@@ -465,7 +496,7 @@ public class Portatil2 extends AppCompatActivity {
         //N/S
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("N/S", 364, 433, titulo);
+        canvas.drawText("N/S".toUpperCase(), 364, 433, titulo);
 
         //N/S Imagen
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
@@ -475,7 +506,7 @@ public class Portatil2 extends AppCompatActivity {
         //Puertos
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("INTERNA", 62, 544, titulo);
+        canvas.drawText("INTERNA".toUpperCase(), 62, 544, titulo);
 
         //IMAGEN Puetos
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
@@ -486,7 +517,7 @@ public class Portatil2 extends AppCompatActivity {
         //Incidencias
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("INCIDENCIAS", 453, 544, titulo);
+        canvas.drawText("INCIDENCIAS".toUpperCase(), 453, 544, titulo);
 
         //IMAGEN incidencias
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
@@ -501,7 +532,7 @@ public class Portatil2 extends AppCompatActivity {
         //FIRMA
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("FDO. Operador", 255, 680, titulo);
+        canvas.drawText("FDO.", 255, 680, titulo);
 
 
         // Espacio Firma

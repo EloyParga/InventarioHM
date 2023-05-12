@@ -178,7 +178,7 @@
                 android:paddingTop="30dp">
 
                 <EditText
-                    android:id="@+id/etCant"
+                    android:id="@+id/etCantidad"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
                     android:layout_weight="1"
@@ -196,7 +196,7 @@
                     android:translationY="11dp" />
 
                 <EditText
-                    android:id="@+id/etUbi"
+                    android:id="@+id/etUbicacion"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
                     android:layout_weight="1"
