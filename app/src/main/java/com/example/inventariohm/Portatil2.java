@@ -85,6 +85,7 @@ public class Portatil2 extends AppCompatActivity {
             public void onClick(View v) {
                 crearPDFPortatil();
                 finish();
+
             }
         });
     }
@@ -563,7 +564,7 @@ public class Portatil2 extends AppCompatActivity {
 
         pdfDocument.finishPage(pagina1);
 
-        File file = new File(Environment.getExternalStorageDirectory(), "Archivo.pdf");
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), modelo+"_"+fecha+".pdf");
         try {
             pdfDocument.writeTo(new FileOutputStream(file));
             Toast.makeText(this, "Se creo el PDF correctamente", Toast.LENGTH_LONG).show();

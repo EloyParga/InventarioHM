@@ -31,7 +31,7 @@ public class Hardware extends AppCompatActivity {
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(spHardware.getSelectedItemPosition()==0) { //Posicion 0 Array = Item Pantalla
+       /*         if(spHardware.getSelectedItemPosition()==0) { //Posicion 0 Array = Item Pantalla
                     Intent i= new Intent(Hardware.this, Pantalla.class);
                     pasarDato(i);
                     startActivity(i);
@@ -54,12 +54,35 @@ public class Hardware extends AppCompatActivity {
                 }else{
                     Toast.makeText(Hardware.this,"Debes seleccionar un dispositivo hardware", Toast.LENGTH_SHORT).show();
                 }
+*/
+                Intent i = null;
 
+                switch (spHardware.getSelectedItemPosition()) {
+                    case 0:
+                        i = new Intent(Hardware.this, Pantalla.class);
+                        break;
+                    case 1:
+                        i = new Intent(Hardware.this, CPU.class);
+                        break;
+                    case 2:
+                        i = new Intent(Hardware.this, Raton.class);
+                        break;
+                    case 3:
+                        i = new Intent(Hardware.this, Teclado.class);
+                        break;
+                    case 4:
+                        i = new Intent(Hardware.this, Portatil.class);
+                        break;
+                    default:
+                        Toast.makeText(Hardware.this, "Debes seleccionar un dispositivo hardware", Toast.LENGTH_SHORT).show();
+                        return;
+                }
 
+                if (i != null) {
+                    pasarDato(i);
+                }
 
-
-
-            }
+        }
         });
 
         btnAtras.setOnClickListener(new View.OnClickListener() {
@@ -75,16 +98,11 @@ public class Hardware extends AppCompatActivity {
         String modelo = etModelo2.getText().toString();
         String numSerie = etNSerie.getText().toString();
         String fecha = etFecha.getText().toString();
-
-
         Bundle b = new Bundle();
-
         b.putString("modelo",modelo);
         b.putString("numSerie",numSerie);
         b.putString("fecha",fecha);
-
         i.putExtras(b);
-
         startActivity(i);
 
     }
