@@ -41,7 +41,8 @@ public class Teclado extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teclado);
-        btnPDFmoviliario4 = findViewById(R.id.btnPDFmoviliario4);
+        etObservaMoviliario5 = findViewById(R.id.etObservaMoviliario5);
+        btnPDFmoviliario4=findViewById(R.id.btnPDFmoviliario4);
         etLargoPantalla = findViewById(R.id.etLargoPantalla);
         etAnchoPantalla = findViewById(R.id.etAnchoPantalla);
         etAltoPantalla = findViewById(R.id.etAltoPantalla);
@@ -82,6 +83,7 @@ public class Teclado extends AppCompatActivity {
                 fecha=fecha2.toUpperCase();
 
                 crearPDFTeclado();
+                
                 finish();
             }
         });
