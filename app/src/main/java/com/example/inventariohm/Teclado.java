@@ -25,12 +25,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.io.File;
 import java.io.FileOutputStream;
 
 public class Teclado extends AppCompatActivity {
 
     Button btnPDFmoviliario4;
+    FloatingActionButton btnAntMovil6;
     EditText etLargoPantalla,etAnchoPantalla,etAltoPantalla,etObservaMoviliario5;
     Spinner spConectividad,spIdioma;
     private String modelo,serie,fecha,largo,ancho,alto,idioma,conexion,observacion;
@@ -44,6 +47,7 @@ public class Teclado extends AppCompatActivity {
         etAltoPantalla = findViewById(R.id.etAltoPantalla);
         spConectividad = findViewById(R.id.spConectividad);
         spIdioma = findViewById(R.id.spIdioma);
+        btnAntMovil6 = findViewById(R.id.btnAntMovil6);
 
 
         Bundle b = getIntent().getExtras();
@@ -78,8 +82,14 @@ public class Teclado extends AppCompatActivity {
                 fecha=fecha2.toUpperCase();
 
                 crearPDFTeclado();
+                finish();
             }
         });
+        btnAntMovil6.setOnClickListener(new View.OnClickListener() {
+        public void onClick(View v) {
+            finish();
+        }
+    });
 
     }
 

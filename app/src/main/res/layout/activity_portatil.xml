@@ -63,11 +63,14 @@
         android:id="@+id/linearLayout4"
         android:layout_width="600dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
         android:orientation="vertical"
         android:paddingLeft="40dp"
         android:paddingTop="30dp"
         android:paddingRight="40dp"
-        tools:layout_editor_absoluteX="-2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
         <LinearLayout

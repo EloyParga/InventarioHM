@@ -25,6 +25,7 @@ public class Pantalla extends AppCompatActivity {
     private EditText etUSB;
     private EditText etDVI;
     private EditText etDP;
+    FloatingActionButton btnAntMovil4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class Pantalla extends AppCompatActivity {
         btnSigMovil3 = findViewById(R.id.btnSigMovil3);
 
         etLargoPantalla = findViewById(R.id.etLargoPantalla);
+        btnAntMovil4 = findViewById(R.id.btnAntMovil4);
         etAnchoPantalla = findViewById(R.id.etAnchoPantalla);
         etAltoPantalla = findViewById(R.id.etAltoPantalla);
         spConexion = findViewById(R.id.spConexion);
@@ -91,6 +93,13 @@ public class Pantalla extends AppCompatActivity {
 
                 i.putExtras(b);
                 startActivity(i);
+            }
+        });
+
+        btnAntMovil4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

@@ -24,11 +24,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.io.File;
 import java.io.FileOutputStream;
 
 public class Pantalla2 extends AppCompatActivity {
     Button btnPDFmoviliario3;
+    FloatingActionButton btnAntMovil5;
     EditText etObservaMoviliario3;
     private String modelo,serie,fecha,largo,ancho,alto, resolucion,pulgadas,
             alimentacion,tipopantalla,vga,hdmi,usb,dvi,dp,observaciones;
@@ -36,8 +39,9 @@ public class Pantalla2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla2);
-        btnPDFmoviliario3 = findViewById(R.id.btnPDFmoviliario3);
         etObservaMoviliario3 =findViewById(R.id.etObservaMoviliario3);
+        btnPDFmoviliario3 = findViewById(R.id.btnPDFmoviliario3);
+        btnAntMovil5 = findViewById(R.id.btnAntMovil5);
 
         Bundle b = getIntent().getExtras();
         modelo = b.getString("modelo");
@@ -73,6 +77,14 @@ public class Pantalla2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 crearPDFPantalla();
+                finish();
+            }
+        });
+
+        btnAntMovil5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

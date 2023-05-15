@@ -82,6 +82,7 @@ public class CPU2 extends AppCompatActivity {
                 observaciones=etObservaMoviliario.getText().toString();
 
                 crearPDFCPU();
+                finish();
             }
         });
     }

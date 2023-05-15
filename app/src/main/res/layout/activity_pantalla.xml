@@ -54,7 +54,9 @@
         android:paddingTop="200dp"
         android:paddingRight="40dp"
         android:paddingBottom="20dp"
-        tools:layout_editor_absoluteX="-2dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/lyDimensiones"

@@ -95,6 +95,8 @@ public class Moviliario2 extends AppCompatActivity {
             public void onClick(View v) {
                 observaciones = etObservaMoviliario2.getText().toString().toUpperCase();
                 crearPDF();
+                finish();
+                finish();
             }
         });
     }

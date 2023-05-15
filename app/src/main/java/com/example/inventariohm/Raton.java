@@ -25,12 +25,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.io.File;
 import java.io.FileOutputStream;
 
 public class Raton extends AppCompatActivity {
 
     Button btnPDFmoviliario2;
+    FloatingActionButton btnAntMovil3;
 
     EditText etObservaMoviliario4,etPulgadas,etLargoPantalla,etAnchoPantalla,etAltoPantalla;
     Spinner spConexion;
@@ -46,6 +49,7 @@ public class Raton extends AppCompatActivity {
         etAnchoPantalla = findViewById(R.id.etAnchoPantalla);
         etAltoPantalla = findViewById(R.id.etAltoPantalla);
         spConexion = findViewById(R.id.spConexion);
+        btnAntMovil3 = findViewById(R.id.btnAntMovil3);
 
 
         Bundle b = getIntent().getExtras();
@@ -75,6 +79,13 @@ public class Raton extends AppCompatActivity {
                 fecha=fecha2.toUpperCase();
 
                 crearPDFRaton();
+                finish();
+            }
+        });
+        btnAntMovil3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

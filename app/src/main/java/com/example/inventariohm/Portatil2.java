@@ -84,6 +84,7 @@ public class Portatil2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 crearPDFPortatil();
+                finish();
             }
         });
     }

@@ -96,6 +96,7 @@ EditText etLargoCPU,etAnchoCPU,etAltoCPU,etProcesadorCPU, etRAMCPU,
                 i.putExtras(b);
                 startActivity(i);
 
+
             };
         });
         floatingActionButton=findViewById(R.id.floatingActionButton);
