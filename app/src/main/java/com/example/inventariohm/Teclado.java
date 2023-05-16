@@ -83,8 +83,8 @@ public class Teclado extends AppCompatActivity {
                 fecha=fecha2.toUpperCase();
 
                 crearPDFTeclado();
-                
-                finish();
+
+
             }
         });
         btnAntMovil6.setOnClickListener(new View.OnClickListener() {
@@ -335,7 +335,7 @@ public class Teclado extends AppCompatActivity {
 
         pdfDocument.finishPage(pagina1);
 
-        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), modelo+"_"+fecha+".pdf");
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), modelo.toUpperCase()+"_"+fecha+".pdf");
         try {
             pdfDocument.writeTo(new FileOutputStream(file));
             Toast.makeText(this, "Se creo el PDF correctamente", Toast.LENGTH_LONG).show();

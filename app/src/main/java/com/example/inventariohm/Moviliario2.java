@@ -95,8 +95,6 @@ public class Moviliario2 extends AppCompatActivity {
             public void onClick(View v) {
                 observaciones = etObservaMoviliario2.getText().toString().toUpperCase();
                 crearPDF();
-                finish();
-                finish();
             }
         });
     }
@@ -389,7 +387,7 @@ public class Moviliario2 extends AppCompatActivity {
 
         pdfDocument.finishPage(pagina1);
 
-        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), descripcion+"_"+fecha+".pdf");
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), descripcionMueble.toUpperCase()+"_"+fecha+".pdf");
         try {
             pdfDocument.writeTo(new FileOutputStream(file));
             Toast.makeText(this, "Se creo el PDF correctamente", Toast.LENGTH_LONG).show();

@@ -35,6 +35,7 @@ import java.io.FileOutputStream;
 public class Portatil extends AppCompatActivity {
 
     FloatingActionButton btnSigMovil2;
+    FloatingActionButton btnAntMovil7;
     private EditText etLargoPantalla;
     private EditText etAnchoPantalla;
     private EditText etAltoPantalla;
@@ -70,6 +71,7 @@ public class Portatil extends AppCompatActivity {
         String fecha2= b.getString("fecha");
 
         btnSigMovil2 = findViewById(R.id.btnSigMovil2);
+        btnAntMovil7 = findViewById(R.id.btnAntMovil7);
         cbDVD = findViewById(R.id.cbDVD);
         etLargoPantalla = findViewById(R.id.etLargoPantalla);
         etAnchoPantalla = findViewById(R.id.etAnchoPantalla);
@@ -158,6 +160,12 @@ public class Portatil extends AppCompatActivity {
 
                 i.putExtras(b);
                 startActivity(i);
+            }
+        });
+        btnAntMovil7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 

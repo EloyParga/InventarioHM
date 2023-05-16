@@ -77,7 +77,6 @@ public class Pantalla2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 crearPDFPantalla();
-                finish();
             }
         });
 
@@ -445,7 +444,7 @@ public class Pantalla2 extends AppCompatActivity {
 
         pdfDocument.finishPage(pagina1);
 
-        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), modelo+"_"+fecha+".pdf");
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), modelo.toUpperCase()+"_"+fecha+".pdf");
         try {
             pdfDocument.writeTo(new FileOutputStream(file));
             Toast.makeText(this, "Se creo el PDF correctamente", Toast.LENGTH_LONG).show();

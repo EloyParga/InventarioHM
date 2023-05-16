@@ -24,11 +24,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.io.File;
 import java.io.FileOutputStream;
 
 public class Portatil2 extends AppCompatActivity {
     private Button btnPDFCPU2;
+    FloatingActionButton btnAntCPU2;
     private EditText etObservaMoviliario6;
     private String modelo,serie,fecha,largo,ancho,alto,procesador,pulgadas,RAM,
             grafica,so,alimentacion,idioma,pantalla,almacenamiento,voltaje,
@@ -40,6 +43,7 @@ public class Portatil2 extends AppCompatActivity {
         setContentView(R.layout.activity_portatil2);
         btnPDFCPU2 = findViewById(R.id.btnPDFCPU2);
 
+        btnAntCPU2=findViewById(R.id.btnAntCPU2);
         etObservaMoviliario6=findViewById(R.id.etObservaMoviliario6);
 
         Bundle b = getIntent().getExtras();
@@ -84,6 +88,13 @@ public class Portatil2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 crearPDFPortatil();
+
+
+            }
+        });
+        btnAntCPU2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 finish();
 
             }
@@ -564,7 +575,7 @@ public class Portatil2 extends AppCompatActivity {
 
         pdfDocument.finishPage(pagina1);
 
-        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), modelo+"_"+fecha+".pdf");
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), modelo.toUpperCase()+"_"+fecha+".pdf");
         try {
             pdfDocument.writeTo(new FileOutputStream(file));
             Toast.makeText(this, "Se creo el PDF correctamente", Toast.LENGTH_LONG).show();

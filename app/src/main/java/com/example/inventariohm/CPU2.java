@@ -31,6 +31,8 @@ import java.io.FileOutputStream;
 
 public class CPU2 extends AppCompatActivity {
     FloatingActionButton btnAntCPU;
+
+
     EditText etObservaMoviliario;
     private String modelo,serie,fecha,largo,ancho,alto,procesador,ram,
     alimentacion,ssd,hdd,vga,hdmi,usb,dvi,dp,dvdr,observaciones;
@@ -43,6 +45,7 @@ public class CPU2 extends AppCompatActivity {
         setContentView(R.layout.activity_cpu2);
 
         etObservaMoviliario= findViewById(R.id.etObservaMoviliario);
+        btnAntCPU= findViewById(R.id.btnAntCPU);
 
         Bundle b = getIntent().getExtras();
         modelo = b.getString("modelo");
@@ -82,6 +85,12 @@ public class CPU2 extends AppCompatActivity {
                 observaciones=etObservaMoviliario.getText().toString();
 
                 crearPDFCPU();
+
+            }
+        });
+        btnAntCPU.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 finish();
             }
         });
@@ -468,7 +477,7 @@ public class CPU2 extends AppCompatActivity {
 
         pdfDocument.finishPage(pagina1);
 
-        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), modelo+"_"+fecha+".pdf");
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), modelo.toUpperCase()+"_"+fecha+".pdf");
         try {
             pdfDocument.writeTo(new FileOutputStream(file));
             Toast.makeText(this, "Se creo el PDF correctamente", Toast.LENGTH_LONG).show();
