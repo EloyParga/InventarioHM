@@ -9,6 +9,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -79,6 +80,7 @@ public class Raton extends AppCompatActivity {
                 fecha=fecha2.toUpperCase();
 
                 crearPDFRaton();
+                cierre();
 
             }
         });
@@ -88,6 +90,14 @@ public class Raton extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    public void cierre(){
+        Intent i = new Intent(this, MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        i.putExtra("EXIT", true);
+        startActivity(i);
+        finish();
     }
 
     public void crearPDFRaton(){

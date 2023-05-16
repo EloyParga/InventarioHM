@@ -66,6 +66,7 @@ public class Moviliario extends AppCompatActivity {
                 String notas = etNotaMoviliario.getText().toString();
 
                 Intent i = new Intent(Moviliario.this, Moviliario2.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
                 Bundle b = new Bundle();
 

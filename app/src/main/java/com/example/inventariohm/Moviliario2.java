@@ -95,8 +95,18 @@ public class Moviliario2 extends AppCompatActivity {
             public void onClick(View v) {
                 observaciones = etObservaMoviliario2.getText().toString().toUpperCase();
                 crearPDF();
+                finish();
+                cierre();
             }
         });
+    }
+    public void cierre(){
+        Intent i = new Intent(this, MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        i.putExtra("EXIT", true);
+        startActivity(i);
+        finish();
     }
     public void crearPDF(){
         PdfDocument pdfDocument = new PdfDocument();

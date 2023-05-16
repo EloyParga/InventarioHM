@@ -12,6 +12,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (getIntent().getBooleanExtra("EXIT", false)) {
+            finish();
+        }
+
     }
 
     public void BtnHardware(View v){
@@ -21,5 +25,13 @@ public class MainActivity extends AppCompatActivity {
     public void BtnMueble(View v){
         Intent i = new Intent(this, Moviliario.class);
         startActivity(i);
+
     }
+    public void cerrar(){
+        finish();
+    }
+    public void onBackPressed() {
+        // No hacer nada para evitar que se cierre la aplicación
+    }
+
 }
