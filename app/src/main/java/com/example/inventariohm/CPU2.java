@@ -31,13 +31,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 public class CPU2 extends AppCompatActivity {
+    //Variables
     FloatingActionButton btnAntCPU;
-
-
     EditText etObservaMoviliario;
     private String modelo,serie,fecha,largo,ancho,alto,procesador,ram,
     alimentacion,ssd,hdd,vga,hdmi,usb,dvi,dp,dvdr,observaciones;
-
     Button btnPDFCPU;
 
     @Override
@@ -45,9 +43,13 @@ public class CPU2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cpu2);
 
+        //Vincular Variables
         etObservaMoviliario= findViewById(R.id.etObservaMoviliario);
         btnAntCPU= findViewById(R.id.btnAntCPU);
+        btnPDFCPU = findViewById(R.id.btnPDFCPU);
+        btnPDFCPU=findViewById(R.id.btnPDFCPU);
 
+        //Extrae datos de la Activity Anterior
         Bundle b = getIntent().getExtras();
         modelo = b.getString("modelo");
         serie = b.getString("numSerie");
@@ -67,10 +69,7 @@ public class CPU2 extends AppCompatActivity {
         dp= b.getString("dp");
         dvdr= b.getString("dvdr");
 
-
-
-        btnPDFCPU = findViewById(R.id.btnPDFCPU);
-
+        //Mensaje en pantalla al aceptar los permisos
         if(checkPermission()) {
             Toast.makeText(this, "Permiso Aceptado", Toast.LENGTH_LONG).show();
         } else {
@@ -78,13 +77,10 @@ public class CPU2 extends AppCompatActivity {
             requestPermissions();
         }
 
-        btnPDFCPU=findViewById(R.id.btnPDFCPU);
-
         btnPDFCPU.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 observaciones=etObservaMoviliario.getText().toString();
-
                 crearPDFCPU();
                 cierre();
 
@@ -97,6 +93,7 @@ public class CPU2 extends AppCompatActivity {
             }
         });
     }
+    //Funcion para cerrar la vida de las activitys e ir al Main
     public void cierre(){
         Intent i = new Intent(this, MainActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -106,6 +103,7 @@ public class CPU2 extends AppCompatActivity {
         finish();
     }
 
+    //Metodo que crea el archivo .PDF dandole un formato y cargando el contenido de las variables
     public void crearPDFCPU(){
         PdfDocument pdfDocument = new PdfDocument();
         Paint paint = new Paint();
@@ -487,6 +485,7 @@ public class CPU2 extends AppCompatActivity {
 
         pdfDocument.finishPage(pagina1);
 
+        //Crear fichero
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), modelo.toUpperCase()+"_"+fecha+".pdf");
         try {
             pdfDocument.writeTo(new FileOutputStream(file));
@@ -498,6 +497,8 @@ public class CPU2 extends AppCompatActivity {
         pdfDocument.close();
 
     }
+
+    //Funciones para los Permisos
     private boolean checkPermission() {
         int permission1 = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
         int permission2 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);

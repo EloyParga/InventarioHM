@@ -12,16 +12,19 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Hardware extends AppCompatActivity {
+    //Variables
     Spinner spHardware;
     private EditText etModelo2,etNSerie,etFecha;
     FloatingActionButton btnSiguiente;
     FloatingActionButton btnAtras;
-    @Override
+
+      @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hardware);
-        spHardware =findViewById(R.id.spHardware);
 
+        //Vincular variables
+        spHardware =findViewById(R.id.spHardware);
         btnSiguiente = findViewById(R.id.btnSiguiente);
         btnAtras = findViewById(R.id.btnAtras);
         etModelo2=findViewById(R.id.etModelo2);
@@ -31,32 +34,8 @@ public class Hardware extends AppCompatActivity {
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-       /*         if(spHardware.getSelectedItemPosition()==0) { //Posicion 0 Array = Item Pantalla
-                    Intent i= new Intent(Hardware.this, Pantalla.class);
-                    pasarDato(i);
-                    startActivity(i);
-                }else if(spHardware.getSelectedItemPosition()==1) { //Posicion 1 Array = Item CPU
-                    Intent i= new Intent(Hardware.this, CPU.class);
-                    pasarDato(i);
-                    startActivity(i);
-                }else if(spHardware.getSelectedItemPosition()==2) { //Posicion 2 Array = Item Raton
-                    Intent i= new Intent(Hardware.this, Raton.class);
-                    pasarDato(i);
-                    startActivity(i);
-                }else if(spHardware.getSelectedItemPosition()==3) { //Posicion 3 Array = Item Teclado
-                    Intent i= new Intent(Hardware.this, Teclado.class);
-                    pasarDato(i);
-                    startActivity(i);
-                }else if(spHardware.getSelectedItemPosition()==4) { //Posicion 4 Array = Item Portatil
-                    Intent i= new Intent(Hardware.this, Portatil.class);
-                    pasarDato(i);
-                    startActivity(i);
-                }else{
-                    Toast.makeText(Hardware.this,"Debes seleccionar un dispositivo hardware", Toast.LENGTH_SHORT).show();
-                }
-*/
                 Intent i = null;
-
+                //Inicia una activity distinta depèndiendo del Item del spinner
                 switch (spHardware.getSelectedItemPosition()) {
                     case 0:
                         i = new Intent(Hardware.this, Pantalla.class);
@@ -85,6 +64,7 @@ public class Hardware extends AppCompatActivity {
         }
         });
 
+        //Boton para ir a la activity anterior
         btnAtras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
