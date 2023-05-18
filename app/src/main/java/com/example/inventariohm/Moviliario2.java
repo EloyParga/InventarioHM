@@ -4,6 +4,8 @@ import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 
+import androidx.activity.result.contract.ActivityResultContract;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,19 +13,24 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
+import android.app.Instrumentation;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.view.View;
+
 
 import com.google.android.material.animation.DrawableAlphaProperty;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -31,6 +38,7 @@ import android.os.Environment;
 import android.text.TextPaint;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -38,14 +46,17 @@ import java.io.FileOutputStream;
 
 public class Moviliario2 extends AppCompatActivity {
     FloatingActionButton btnAntMovil2;
+    ImageView ivFoto1;
     public String descripcionMueble,largo,ancho,alto,cantidad,fecha,
             ubicacion,precioI,precioA,notas,observaciones,numSerie;
 
     Button btnPDFmoviliario;
+    Drawable frontal;
 
     private File f;
 
     private EditText etObservaMoviliario2;
+
 
 
 
@@ -54,6 +65,11 @@ public class Moviliario2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moviliario2);
         etObservaMoviliario2 = findViewById(R.id.etObservaMoviliario2);
+        ivFoto1 = findViewById(R.id.ivFoto1);
+
+            //PRUEBA IMAGEN
+
+        //FIN PRUEBA IMAGEN
 
 
          Bundle b = getIntent().getExtras();
@@ -108,6 +124,20 @@ public class Moviliario2 extends AppCompatActivity {
         startActivity(i);
         finish();
     }
+
+    public void meterFoto(View vista){
+        cargarImagen();
+    }
+
+    private void cargarImagen() {
+        Intent i =new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        i.setType("image/");
+        startActivityForResult(i.createChooser(i,"Seleccione APK"),10);
+
+    }
+
+
+
     public void crearPDF(){
         PdfDocument pdfDocument = new PdfDocument();
         Paint paint = new Paint();
@@ -448,9 +478,9 @@ public class Moviliario2 extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode==RESULT_OK){
             Uri uri=data.getData();
+            //ivFoto1.setImageURI(uri);
             final String realPath=getRealPathFromUri(uri);
             this.f=new File(realPath);
-            //this.imageUser.setImageUri(uri);
         }
     }
 

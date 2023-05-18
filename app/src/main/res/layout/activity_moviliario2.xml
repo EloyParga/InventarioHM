@@ -110,6 +110,7 @@
                 android:id="@+id/ivFoto1"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
+                android:onClick="meterFoto"
                 android:layout_weight="0.5"
                 app:srcCompat="@drawable/foto" />
 
