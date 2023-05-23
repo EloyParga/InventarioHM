@@ -102,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingRight="50dp"
-                android:text="Interna"
+                android:text="Frontal"
                 android:textColor="@color/Black"
                 android:textSize="24sp" />
 
