@@ -202,7 +202,6 @@ public class Moviliario2 extends AppCompatActivity {
         finish();
     }
 
-    public void crearPDF() throws IOException {
 
     public void crearPDF() throws IOException {
 
@@ -525,7 +524,6 @@ public class Moviliario2 extends AppCompatActivity {
 
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), descripcionMueble.toUpperCase()+"_"+fecha+".pdf");
 
-        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), descripcionMueble+"_"+fecha+".pdf");
 
         try {
             pdfDocument.writeTo(new FileOutputStream(file));
