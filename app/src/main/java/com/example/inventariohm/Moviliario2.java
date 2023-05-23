@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -31,20 +32,28 @@ import android.os.Environment;
 import android.text.TextPaint;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class Moviliario2 extends AppCompatActivity {
+
+    private static final int REQUEST_CODE_PERMISSION = 1;
+    private static final int REQUEST_CODE_GALLERY = 2;
+
     FloatingActionButton btnAntMovil2;
     public String descripcionMueble,largo,ancho,alto,cantidad,fecha,
             ubicacion,precioI,precioA,notas,observaciones,numSerie;
-
+    private ImageView ivFoto1,ivFoto2,ivFoto3,ivFoto4,ivFoto5;
+    private Uri UriImagen1,UriImagen2,UriImagen3,UriImagen4,UriImagen5;
     Button btnPDFmoviliario;
 
     private File f;
 
+    private int selector;
     private EditText etObservaMoviliario2;
 
 
@@ -53,8 +62,14 @@ public class Moviliario2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moviliario2);
-        etObservaMoviliario2 = findViewById(R.id.etObservaMoviliario2);
 
+        etObservaMoviliario2 = findViewById(R.id.etObservaMoviliario2);
+        btnAntMovil2 = findViewById(R.id.btnAntMovil2);
+        ivFoto1= findViewById(R.id.ivFoto1);
+        ivFoto2= findViewById(R.id.ivFoto2);
+        ivFoto3= findViewById(R.id.ivFoto3);
+        ivFoto4= findViewById(R.id.ivFoto4);
+        ivFoto5= findViewById(R.id.ivFoto5);
 
          Bundle b = getIntent().getExtras();
          numSerie = b.getString("numSerie");
@@ -69,9 +84,76 @@ public class Moviliario2 extends AppCompatActivity {
          precioA = b.getString("precioActual" );
          notas = b.getString("notas" );
 
+        ivFoto1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selector=1;
+                if (ContextCompat.checkSelfPermission(Moviliario2.this, READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Moviliario2.this, new String[]{READ_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION);
+                } else {
+                    abrirGaleria();
+                }
+            }
+        });
+
+        ivFoto2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContextCompat.checkSelfPermission(Moviliario2.this, READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(Moviliario2.this,
+                            new String[]{READ_EXTERNAL_STORAGE},
+                            REQUEST_CODE_PERMISSION);
+                }else{
+                    abrirGaleria();
+                }
+                selector=2;
+            }
+        });
+        ivFoto3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContextCompat.checkSelfPermission(Moviliario2.this, READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(Moviliario2.this,
+                            new String[]{READ_EXTERNAL_STORAGE},
+                            REQUEST_CODE_PERMISSION);
+                }else{
+                    abrirGaleria();
+                }
+                selector=3;
+            }
+        });
+        ivFoto4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContextCompat.checkSelfPermission(Moviliario2.this, READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(Moviliario2.this,
+                            new String[]{READ_EXTERNAL_STORAGE},
+                            REQUEST_CODE_PERMISSION);
+                }else{
+                    abrirGaleria();
+                }
+                selector=4;
+            }
+        });
+        ivFoto5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContextCompat.checkSelfPermission(Moviliario2.this, READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(Moviliario2.this,
+                            new String[]{READ_EXTERNAL_STORAGE},
+                            REQUEST_CODE_PERMISSION);
+                }else{
+                    abrirGaleria();
+                }
+                selector=5;
+            }
+        });
 
 
-        btnAntMovil2 = findViewById(R.id.btnAntMovil2);
 
         btnAntMovil2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,12 +176,23 @@ public class Moviliario2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 observaciones = etObservaMoviliario2.getText().toString().toUpperCase();
-                crearPDF();
+                try {
+                    crearPDF();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
                 finish();
                 cierre();
             }
         });
     }
+
+    private void abrirGaleria(){
+            Intent i = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(i, REQUEST_CODE_GALLERY);
+        }
+
+
     public void cierre(){
         Intent i = new Intent(this, MainActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -108,7 +201,12 @@ public class Moviliario2 extends AppCompatActivity {
         startActivity(i);
         finish();
     }
-    public void crearPDF(){
+
+    public void crearPDF() throws IOException {
+
+    public void crearPDF() throws IOException {
+
+
         PdfDocument pdfDocument = new PdfDocument();
         Paint paint = new Paint();
         TextPaint titulo = new TextPaint();
@@ -315,9 +413,16 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawText("FRONTAL", 60, 420, titulo);
 
         //IMAGEN FRONTAL
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen1 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen1);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
-        canvas.drawBitmap(bitmapEscala, 43, 438, paint);
+        canvas.drawBitmap(bitmapEscala, 40, 437, paint);
+
+
 
         //Trasera
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -325,9 +430,14 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawText("TRASERA", 277, 420, titulo);
 
         //IMAGEN Trasera
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen2 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen2);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
-        canvas.drawBitmap(bitmapEscala, 253, 438, paint);
+        canvas.drawBitmap(bitmapEscala, 255, 437, paint);
 
         //Interna
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -335,9 +445,14 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawText("INTERNA", 473, 420, titulo);
 
         //IMAGEN Interna
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen3 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen3);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
-        canvas.drawBitmap(bitmapEscala, 448, 438, paint);
+        canvas.drawBitmap(bitmapEscala, 449, 437, paint);
 
         //Ubicacion
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -345,19 +460,29 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawText("UBICACION", 160, 539, titulo);
 
         //IMAGEN Ubicacion
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen4 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen4);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
-        canvas.drawBitmap(bitmapEscala, 143, 549, paint);
+        canvas.drawBitmap(bitmapEscala, 144, 548, paint);
 
         //Incidencias
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("INCIDENCIAS", 365, 539, titulo);
+        canvas.drawText("INCIDENCIAS", 364, 539, titulo);
 
         //IMAGEN incidencias
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen5 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen5);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
-        canvas.drawBitmap(bitmapEscala, 353, 549, paint);
+        canvas.drawBitmap(bitmapEscala, 364, 548, paint);
 
         // Firma Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -397,7 +522,11 @@ public class Moviliario2 extends AppCompatActivity {
 
         pdfDocument.finishPage(pagina1);
 
+
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), descripcionMueble.toUpperCase()+"_"+fecha+".pdf");
+
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), descripcionMueble+"_"+fecha+".pdf");
+
         try {
             pdfDocument.writeTo(new FileOutputStream(file));
             Toast.makeText(this, "Se creo el PDF correctamente", Toast.LENGTH_LONG).show();
@@ -418,39 +547,56 @@ public class Moviliario2 extends AppCompatActivity {
         ActivityCompat.requestPermissions(this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, 200);
     }
 
-    @SuppressLint("MissingSuperCall")
-    @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if(requestCode == 200) {
-            if(grantResults.length > 0) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 200) {
+            if (grantResults.length > 0) {
                 boolean writeStorage = grantResults[0] == PackageManager.PERMISSION_GRANTED;
                 boolean readStorage = grantResults[1] == PackageManager.PERMISSION_GRANTED;
 
-                if(writeStorage && readStorage) {
+                if (writeStorage && readStorage) {
                     Toast.makeText(this, "Permiso concedido", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(this, "Permiso denegado", Toast.LENGTH_LONG).show();
-                   // finish();
+                    // finish();
                 }
+            }
+        }
+        if (requestCode == REQUEST_CODE_PERMISSION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                abrirGaleria();
             }
         }
     }
 
-    //TRATADO DE IMAGENES DEBAJO
-    public void importarImagen(View vista){
-        Intent i=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        i.setType("image/");
-        startActivityForResult(Intent.createChooser(i,"Seleccione la aplicacion"),10);
-        }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode==RESULT_OK){
-            Uri uri=data.getData();
-            final String realPath=getRealPathFromUri(uri);
-            this.f=new File(realPath);
-            //this.imageUser.setImageUri(uri);
+        if(requestCode == REQUEST_CODE_GALLERY && resultCode == RESULT_OK && data != null){
+            Uri selectedImage = data.getData();
+            switch (selector) {
+                case 1:
+                    UriImagen1 = selectedImage;
+                    ivFoto1.setImageURI(UriImagen1);
+                    break;
+                case 2:
+                    UriImagen2 = selectedImage;
+                    ivFoto2.setImageURI(UriImagen2);
+                    break;
+                case 3:
+                    UriImagen3 = selectedImage;
+                    ivFoto3.setImageURI(UriImagen3);
+                    break;
+                case 4:
+                    UriImagen4 = selectedImage;
+                    ivFoto4.setImageURI(UriImagen4);
+                    break;
+                case 5:
+                    UriImagen5 = selectedImage;
+                    ivFoto5.setImageURI(UriImagen5);
+                    break;
+            }
+
         }
     }
 
