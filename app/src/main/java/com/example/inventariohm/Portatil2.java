@@ -17,20 +17,30 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.pdf.PdfDocument;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.text.TextPaint;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class Portatil2 extends AppCompatActivity {
+
+    private static final int REQUEST_CODE_PERMISSION = 1;
+    private static final int REQUEST_CODE_GALLERY = 2;
+    private ImageView ivPortatilFrontal,ivPortatilSerie,ivPortatilPuertos,ivPortatilIncidencias;
+    private Uri UriImagen1,UriImagen2,UriImagen3,UriImagen4;
+    private int selector;
     private Button btnPDFCPU2;
     FloatingActionButton btnAntCPU2;
     private EditText etObservaMoviliario6;
@@ -46,6 +56,10 @@ public class Portatil2 extends AppCompatActivity {
 
         btnAntCPU2=findViewById(R.id.btnAntCPU2);
         etObservaMoviliario6=findViewById(R.id.etObservaMoviliario6);
+        ivPortatilFrontal=findViewById(R.id.ivPortatilFrontal);
+        ivPortatilSerie=findViewById(R.id.ivPortatilSerie);
+        ivPortatilPuertos=findViewById(R.id.ivPortatilPuertos);
+        ivPortatilIncidencias=findViewById(R.id.ivPortatilIncidencias);
 
         Bundle b = getIntent().getExtras();
         modelo = b.getString("modelo").toUpperCase();
@@ -85,10 +99,61 @@ public class Portatil2 extends AppCompatActivity {
 
         btnPDFCPU2=findViewById(R.id.btnPDFCPU2);
 
+        ivPortatilFrontal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selector=1;
+                if (ContextCompat.checkSelfPermission(Portatil2.this, READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Portatil2.this, new String[]{READ_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION);
+                } else {
+                    abrirGaleria();
+                }
+            }
+        });
+        ivPortatilSerie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selector=2;
+                if (ContextCompat.checkSelfPermission(Portatil2.this, READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Portatil2.this, new String[]{READ_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION);
+                } else {
+                    abrirGaleria();
+                }
+            }
+        });
+        ivPortatilPuertos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selector=3;
+                if (ContextCompat.checkSelfPermission(Portatil2.this, READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Portatil2.this, new String[]{READ_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION);
+                } else {
+                    abrirGaleria();
+                }
+            }
+        });
+        ivPortatilIncidencias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selector=4;
+                if (ContextCompat.checkSelfPermission(Portatil2.this, READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Portatil2.this, new String[]{READ_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION);
+                } else {
+                    abrirGaleria();
+                }
+            }
+        });
+
+
+
         btnPDFCPU2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                crearPDFPortatil();
+                try {
+                    crearPDFPortatil();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
                 cierre();
 
 
@@ -110,8 +175,11 @@ public class Portatil2 extends AppCompatActivity {
         startActivity(i);
         finish();
     }
-
-    public void crearPDFPortatil(){
+    private void abrirGaleria(){
+        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(i, REQUEST_CODE_GALLERY);
+    }
+    public void crearPDFPortatil() throws IOException {
         observaciones=etObservaMoviliario6.getText().toString();
         PdfDocument pdfDocument = new PdfDocument();
         Paint paint = new Paint();
@@ -512,7 +580,12 @@ public class Portatil2 extends AppCompatActivity {
         canvas.drawText("FRONTAL".toUpperCase(), 179, 433, titulo);
 
         //IMAGEN FRONTAL
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen1 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen1);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
         canvas.drawBitmap(bitmapEscala, 161, 440, paint);
 
@@ -522,7 +595,12 @@ public class Portatil2 extends AppCompatActivity {
         canvas.drawText("N/S".toUpperCase(), 364, 433, titulo);
 
         //N/S Imagen
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen2 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen2);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
         canvas.drawBitmap(bitmapEscala, 339, 440, paint);
 
@@ -532,7 +610,12 @@ public class Portatil2 extends AppCompatActivity {
         canvas.drawText("INTERNA".toUpperCase(), 62, 544, titulo);
 
         //IMAGEN Puetos
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen3 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen3);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
         canvas.drawBitmap(bitmapEscala, 43, 550, paint);
 
@@ -543,7 +626,12 @@ public class Portatil2 extends AppCompatActivity {
         canvas.drawText("INCIDENCIAS".toUpperCase(), 453, 544, titulo);
 
         //IMAGEN incidencias
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen4 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen4);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
         canvas.drawBitmap(bitmapEscala, 444, 550, paint);
 
@@ -621,6 +709,32 @@ public class Portatil2 extends AppCompatActivity {
                     // finish();
                 }
             }
+        }
+    }
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_CODE_GALLERY && resultCode == RESULT_OK && data != null){
+            Uri selectedImage = data.getData();
+            switch (selector) {
+                case 1:
+                    UriImagen1 = selectedImage;
+                    ivPortatilFrontal.setImageURI(UriImagen1);
+                    break;
+                case 2:
+                    UriImagen2 = selectedImage;
+                    ivPortatilSerie.setImageURI(UriImagen2);
+                    break;
+                case 3:
+                    UriImagen3 = selectedImage;
+                    ivPortatilPuertos.setImageURI(UriImagen3);
+                    break;
+                case 4:
+                    UriImagen4 = selectedImage;
+                    ivPortatilIncidencias.setImageURI(UriImagen4);
+                    break;
+
+            }
+
         }
     }
     }

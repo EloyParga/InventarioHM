@@ -17,12 +17,15 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.pdf.PdfDocument;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.text.TextPaint;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -30,8 +33,14 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class Teclado extends AppCompatActivity {
+    private static final int REQUEST_CODE_PERMISSION = 1;
+    private static final int REQUEST_CODE_GALLERY = 2;
+    private int selector;
+    private ImageView ivTecladoFrontal,ivTecladoSerie,ivTecladoIncidencia;
+    private Uri UriImagen1,UriImagen2,UriImagen3;
 
     Button btnPDFmoviliario4;
     FloatingActionButton btnAntMovil6;
@@ -51,6 +60,10 @@ public class Teclado extends AppCompatActivity {
         spIdioma = findViewById(R.id.spIdioma);
         btnAntMovil6 = findViewById(R.id.btnAntMovil6);
 
+        ivTecladoFrontal = findViewById(R.id.ivTecladoFrontal);
+        ivTecladoSerie = findViewById(R.id.ivTecladoSerie);
+        ivTecladoIncidencia = findViewById(R.id.ivTecladoIncidencia);
+
 
         Bundle b = getIntent().getExtras();
         String modelo2 = b.getString("modelo");
@@ -68,6 +81,49 @@ public class Teclado extends AppCompatActivity {
             requestPermissions();
         }
 
+        ivTecladoFrontal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContextCompat.checkSelfPermission(Teclado.this, READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(Teclado.this,
+                            new String[]{READ_EXTERNAL_STORAGE},
+                            REQUEST_CODE_PERMISSION);
+                }else{
+                    abrirGaleria();
+                }
+                selector=1;
+            }
+        });
+        ivTecladoSerie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContextCompat.checkSelfPermission(Teclado.this, READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(Teclado.this,
+                            new String[]{READ_EXTERNAL_STORAGE},
+                            REQUEST_CODE_PERMISSION);
+                }else{
+                    abrirGaleria();
+                }
+                selector=2;
+            }
+        });
+        ivTecladoIncidencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContextCompat.checkSelfPermission(Teclado.this, READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(Teclado.this,
+                            new String[]{READ_EXTERNAL_STORAGE},
+                            REQUEST_CODE_PERMISSION);
+                }else{
+                    abrirGaleria();
+                }
+                selector=3;
+            }
+        });
+
         btnPDFmoviliario4=findViewById(R.id.btnPDFmoviliario4);
 
         btnPDFmoviliario4.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +139,11 @@ public class Teclado extends AppCompatActivity {
                 serie=numSerie2.toUpperCase();
                 fecha=fecha2.toUpperCase();
 
-                crearPDFTeclado();
+                try {
+                    crearPDFTeclado();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
                 cierre();
 
 
@@ -104,9 +164,12 @@ public class Teclado extends AppCompatActivity {
         startActivity(i);
         finish();
     }
+    private void abrirGaleria(){
+        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(i, REQUEST_CODE_GALLERY);
+    }
 
-
-    public void crearPDFTeclado(){
+    public void crearPDFTeclado() throws IOException {
         PdfDocument pdfDocument = new PdfDocument();
         Paint paint = new Paint();
         TextPaint titulo = new TextPaint();
@@ -282,7 +345,12 @@ public class Teclado extends AppCompatActivity {
         canvas.drawText("Incidencias".toUpperCase(), 253, 470, titulo);
 
         //Incidencias FRONTAL
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen3 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen3);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
         canvas.drawBitmap(bitmapEscala, 248, 477, paint);
 
@@ -292,7 +360,12 @@ public class Teclado extends AppCompatActivity {
         canvas.drawText("Nº Serie".toUpperCase(), 48, 470, titulo);
 
         //N/S Imagen
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen2 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen2);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
         canvas.drawBitmap(bitmapEscala, 43, 477, paint);
 
@@ -302,7 +375,12 @@ public class Teclado extends AppCompatActivity {
         canvas.drawText("FROTAL".toUpperCase(), 455, 470, titulo);
 
         //FRONTAL Puetos
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen1 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen1);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
         canvas.drawBitmap(bitmapEscala, 452, 477, paint);
 
@@ -381,6 +459,28 @@ public class Teclado extends AppCompatActivity {
                     // finish();
                 }
             }
+        }
+    }
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_CODE_GALLERY && resultCode == RESULT_OK && data != null){
+            Uri selectedImage = data.getData();
+            switch (selector) {
+                case 1:
+                    UriImagen1 = selectedImage;
+                    ivTecladoFrontal.setImageURI(UriImagen1);
+                    break;
+                case 2:
+                    UriImagen2 = selectedImage;
+                    ivTecladoSerie.setImageURI(UriImagen2);
+                    break;
+                case 3:
+                    UriImagen3 = selectedImage;
+                    ivTecladoIncidencia.setImageURI(UriImagen3);
+                    break;
+
+            }
+
         }
     }
 }

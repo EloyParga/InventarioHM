@@ -5,13 +5,10 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -26,7 +23,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 
-import com.google.android.material.animation.DrawableAlphaProperty;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import android.os.Environment;
 import android.text.TextPaint;

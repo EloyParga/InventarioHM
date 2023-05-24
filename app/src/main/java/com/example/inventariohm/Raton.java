@@ -17,12 +17,15 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.pdf.PdfDocument;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.text.TextPaint;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -30,12 +33,18 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class Raton extends AppCompatActivity {
 
+    private static final int REQUEST_CODE_PERMISSION = 1;
+    private static final int REQUEST_CODE_GALLERY = 2;
+    FloatingActionButton btnAntMovil2;
+    private int selector;
     Button btnPDFmoviliario2;
     FloatingActionButton btnAntMovil3;
-
+    private ImageView ivRatonFrontal,ivRatonSerie,ivRatonIncidencias;
+    private Uri UriImagen1,UriImagen2,UriImagen3;
     EditText etObservaMoviliario4,etPulgadas,etLargoPantalla,etAnchoPantalla,etAltoPantalla;
     Spinner spConexion;
     private String modelo,fecha,serie,largo,ancho,alto,botones,conexion,observaciones;
@@ -52,6 +61,10 @@ public class Raton extends AppCompatActivity {
         spConexion = findViewById(R.id.spConexion);
         btnAntMovil3 = findViewById(R.id.btnAntMovil3);
 
+        ivRatonFrontal = findViewById(R.id.ivRatonFrontal);
+        ivRatonSerie = findViewById(R.id.ivRatonSerie);
+        ivRatonIncidencias = findViewById(R.id.ivRatonIncidencias);
+
 
         Bundle b = getIntent().getExtras();
         String modelo2 = b.getString("modelo");
@@ -63,6 +76,49 @@ public class Raton extends AppCompatActivity {
             Toast.makeText(this,"PRUEBA",Toast.LENGTH_LONG).show();
             requestPermissions();
         }
+
+        ivRatonFrontal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContextCompat.checkSelfPermission(Raton.this, READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(Raton.this,
+                            new String[]{READ_EXTERNAL_STORAGE},
+                            REQUEST_CODE_PERMISSION);
+                }else{
+                    abrirGaleria();
+                }
+                selector=1;
+            }
+        });
+        ivRatonSerie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContextCompat.checkSelfPermission(Raton.this, READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(Raton.this,
+                            new String[]{READ_EXTERNAL_STORAGE},
+                            REQUEST_CODE_PERMISSION);
+                }else{
+                    abrirGaleria();
+                }
+                selector=2;
+            }
+        });
+        ivRatonIncidencias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ContextCompat.checkSelfPermission(Raton.this, READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(Raton.this,
+                            new String[]{READ_EXTERNAL_STORAGE},
+                            REQUEST_CODE_PERMISSION);
+                }else{
+                    abrirGaleria();
+                }
+                selector=3;
+            }
+        });
 
         btnPDFmoviliario2=findViewById(R.id.btnPDFmoviliario2);
 
@@ -79,7 +135,11 @@ public class Raton extends AppCompatActivity {
                 serie=numSerie2.toUpperCase();
                 fecha=fecha2.toUpperCase();
 
-                crearPDFRaton();
+                try {
+                    crearPDFRaton();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
                 cierre();
 
             }
@@ -91,6 +151,10 @@ public class Raton extends AppCompatActivity {
             }
         });
     }
+    private void abrirGaleria(){
+        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(i, REQUEST_CODE_GALLERY);
+    }
     public void cierre(){
         Intent i = new Intent(this, MainActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -100,7 +164,7 @@ public class Raton extends AppCompatActivity {
         finish();
     }
 
-    public void crearPDFRaton(){
+    public void crearPDFRaton() throws IOException {
         PdfDocument pdfDocument = new PdfDocument();
         Paint paint = new Paint();
         TextPaint titulo = new TextPaint();
@@ -275,7 +339,12 @@ public class Raton extends AppCompatActivity {
         canvas.drawText("Incidencias".toUpperCase(), 253, 470, titulo);
 
         //Incidencias
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen3 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen3);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
         canvas.drawBitmap(bitmapEscala, 248, 477, paint);
 
@@ -285,7 +354,12 @@ public class Raton extends AppCompatActivity {
         canvas.drawText("Nº Serie".toUpperCase(), 48, 470, titulo);
 
         //N/S Imagen
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen2 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen2);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
         canvas.drawBitmap(bitmapEscala, 43, 477, paint);
 
@@ -295,7 +369,12 @@ public class Raton extends AppCompatActivity {
         canvas.drawText("FROTAL".toUpperCase(), 455, 470, titulo);
 
         //FRONTAL Puetos
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen1 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen1);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
         canvas.drawBitmap(bitmapEscala, 452, 477, paint);
 
@@ -374,6 +453,28 @@ public class Raton extends AppCompatActivity {
                     // finish();
                 }
             }
+        }
+    }
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_CODE_GALLERY && resultCode == RESULT_OK && data != null){
+            Uri selectedImage = data.getData();
+            switch (selector) {
+                case 1:
+                    UriImagen1 = selectedImage;
+                    ivRatonFrontal.setImageURI(UriImagen1);
+                    break;
+                case 2:
+                    UriImagen2 = selectedImage;
+                    ivRatonSerie.setImageURI(UriImagen2);
+                    break;
+                case 3:
+                    UriImagen3 = selectedImage;
+                    ivRatonIncidencias.setImageURI(UriImagen3);
+                    break;
+
+            }
+
         }
     }
 }

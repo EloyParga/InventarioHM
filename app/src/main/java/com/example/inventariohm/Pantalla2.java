@@ -3,7 +3,6 @@ package com.example.inventariohm;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -11,29 +10,41 @@ import androidx.core.content.ContextCompat;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.pdf.PdfDocument;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.text.TextPaint;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class Pantalla2 extends AppCompatActivity {
     Button btnPDFmoviliario3;
     FloatingActionButton btnAntMovil5;
     EditText etObservaMoviliario3;
+
+    private int selector;
+
+    private static final int REQUEST_CODE_PERMISSION = 1;
+    private static final int REQUEST_CODE_GALLERY = 2;
+    ImageView ivPantallaFrontal,ivPantallaSerie,ivPantallaPuertos,ivPantallaIncidencias;
+    private Uri UriImagen1,UriImagen2,UriImagen3,UriImagen4;
     private String modelo,serie,fecha,largo,ancho,alto, resolucion,pulgadas,
             alimentacion,tipopantalla,vga,hdmi,usb,dvi,dp,observaciones;
     @Override
@@ -43,6 +54,10 @@ public class Pantalla2 extends AppCompatActivity {
         etObservaMoviliario3 =findViewById(R.id.etObservaMoviliario3);
         btnPDFmoviliario3 = findViewById(R.id.btnPDFmoviliario3);
         btnAntMovil5 = findViewById(R.id.btnAntMovil5);
+        ivPantallaFrontal = findViewById(R.id.ivPantallaFrontal);
+        ivPantallaSerie = findViewById(R.id.ivPantallaSerie);
+        ivPantallaPuertos = findViewById(R.id.ivPantallaPuertos);
+        ivPantallaIncidencias = findViewById(R.id.ivPantallaIncidencias);
 
         Bundle b = getIntent().getExtras();
         modelo = b.getString("modelo");
@@ -72,12 +87,66 @@ public class Pantalla2 extends AppCompatActivity {
             requestPermissions();
         }
 
+
+
+        ivPantallaFrontal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selector=1;
+                if (ContextCompat.checkSelfPermission(Pantalla2.this, READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Pantalla2.this, new String[]{READ_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION);
+                } else {
+                    abrirGaleria();
+                }
+            }
+        });
+
+        ivPantallaSerie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selector=2;
+                if (ContextCompat.checkSelfPermission(Pantalla2.this, READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Pantalla2.this, new String[]{READ_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION);
+                } else {
+                    abrirGaleria();
+                }
+            }
+        });
+
+        ivPantallaPuertos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selector=3;
+                if (ContextCompat.checkSelfPermission(Pantalla2.this, READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Pantalla2.this, new String[]{READ_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION);
+                } else {
+                    abrirGaleria();
+                }
+            }
+        });
+
+        ivPantallaIncidencias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selector=4;
+                if (ContextCompat.checkSelfPermission(Pantalla2.this, READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Pantalla2.this, new String[]{READ_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION);
+                } else {
+                    abrirGaleria();
+                }
+            }
+        });
+
         btnPDFmoviliario3=findViewById(R.id.btnPDFmoviliario3);
 
         btnPDFmoviliario3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                crearPDFPantalla();
+                try {
+                    crearPDFPantalla();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
                 cierre();
             }
         });
@@ -98,7 +167,12 @@ public class Pantalla2 extends AppCompatActivity {
         finish();
     }
 
-    public void crearPDFPantalla(){
+    private void abrirGaleria(){
+        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(i, REQUEST_CODE_GALLERY);
+    }
+
+    public void crearPDFPantalla() throws IOException {
         observaciones=etObservaMoviliario3.getText().toString();
         PdfDocument pdfDocument = new PdfDocument();
         Paint paint = new Paint();
@@ -381,7 +455,12 @@ public class Pantalla2 extends AppCompatActivity {
         canvas.drawText("FRONTAL", 179, 423, titulo);
 
         //IMAGEN FRONTAL
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen1 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen1);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
         canvas.drawBitmap(bitmapEscala, 161, 430, paint);
 
@@ -391,7 +470,12 @@ public class Pantalla2 extends AppCompatActivity {
         canvas.drawText("N/S", 364, 423, titulo);
 
         //N/S Imagen
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen2 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen2);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
         canvas.drawBitmap(bitmapEscala, 330, 430, paint);
 
@@ -401,7 +485,12 @@ public class Pantalla2 extends AppCompatActivity {
         canvas.drawText("INTERNA", 62, 544, titulo);
 
         //IMAGEN Puetos
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen3 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen3);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
         canvas.drawBitmap(bitmapEscala, 43, 550, paint);
 
@@ -412,7 +501,12 @@ public class Pantalla2 extends AppCompatActivity {
         canvas.drawText("INCIDENCIAS", 453, 544, titulo);
 
         //IMAGEN incidencias
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
+        if (UriImagen4 != null) {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen4);
+        } else {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(android.graphics.Color.WHITE);
+        }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
         canvas.drawBitmap(bitmapEscala, 444, 550, paint);
 
@@ -477,19 +571,42 @@ public class Pantalla2 extends AppCompatActivity {
 
     @SuppressLint("MissingSuperCall")
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if(requestCode == 200) {
-            if(grantResults.length > 0) {
-                boolean writeStorage = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                boolean readStorage = grantResults[1] == PackageManager.PERMISSION_GRANTED;
-
-                if(writeStorage && readStorage) {
-                    Toast.makeText(this, "Permiso concedido", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(this, "Permiso denegado", Toast.LENGTH_LONG).show();
-                    // finish();
-                }
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_CODE_GALLERY && resultCode == RESULT_OK && data != null){
+            Uri selectedImage = data.getData();
+            switch (selector) {
+                case 1:
+                    UriImagen1 = selectedImage;
+                    ivPantallaFrontal.setImageURI(UriImagen1);
+                    break;
+                case 2:
+                    UriImagen2 = selectedImage;
+                    ivPantallaSerie.setImageURI(UriImagen2);
+                    break;
+                case 3:
+                    UriImagen3 = selectedImage;
+                    ivPantallaPuertos.setImageURI(UriImagen3);
+                    break;
+                case 4:
+                    UriImagen4 = selectedImage;
+                    ivPantallaIncidencias.setImageURI(UriImagen4);
+                    break;
             }
+
         }
+    }
+    private String getRealPathFromUri(Uri contentUri) {
+        String result;
+        Cursor cursor=getContentResolver().query(contentUri,null,null,null,null);
+        if(cursor == null){
+            result=contentUri.getPath();
+        }else{
+            cursor.moveToFirst();
+            int idx=cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+            result=cursor.getString(idx);
+            cursor.close();
+        }
+        return result;
     }
     }

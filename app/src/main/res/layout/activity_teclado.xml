@@ -227,7 +227,7 @@
                 android:textSize="24sp" />
 
             <ImageView
-                android:id="@+id/ivFoto1"
+                android:id="@+id/ivTecladoFrontal"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_weight="0.5"
@@ -253,7 +253,7 @@
                 android:textSize="24sp" />
 
             <ImageView
-                android:id="@+id/ivFoto3"
+                android:id="@+id/ivTecladoSerie"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_weight="0.5"
@@ -279,7 +279,7 @@
                 android:textSize="24sp" />
 
             <ImageView
-                android:id="@+id/ivFoto5"
+                android:id="@+id/ivTecladoIncidencia"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_weight="0.5"

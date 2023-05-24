@@ -108,7 +108,7 @@
                 android:textSize="24sp" />
 
             <ImageView
-                android:id="@+id/ivFoto1"
+                android:id="@+id/ivPantallaFrontal"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_weight="0.5"
@@ -134,7 +134,7 @@
                 android:textSize="24sp" />
 
             <ImageView
-                android:id="@+id/ivFoto3"
+                android:id="@+id/ivPantallaSerie"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_weight="0.5"
@@ -160,7 +160,7 @@
                 android:textSize="24sp" />
 
             <ImageView
-                android:id="@+id/ivFoto2"
+                android:id="@+id/ivPantallaPuertos"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_weight="0.5"
@@ -186,7 +186,7 @@
                 android:textSize="24sp" />
 
             <ImageView
-                android:id="@+id/ivFoto5"
+                android:id="@+id/ivPantallaIncidencias"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_weight="0.5"
