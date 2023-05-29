@@ -232,13 +232,13 @@ public class Moviliario2 extends AppCompatActivity {
 
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("Cl. Gran Capitán, 52, Gijón".toUpperCase(), 60, 79, titulo);
+        canvas.drawText("Cl. Gran Capitán, 52. Gijón".toUpperCase(), 60, 79, titulo);
 
 
         //CORREO Y TELEFONO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(10);
-        canvas.drawText("985 66 54 41   hm@hazmaker.org".toUpperCase(), 222, 79, titulo);
+        canvas.drawText("+34 985 66 54 41   hm@hazmaker.org".toUpperCase(), 222, 79, titulo);
 
 
 
@@ -487,7 +487,7 @@ public class Moviliario2 extends AppCompatActivity {
         //FIRMA
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         titulo.setTextSize(13);
-        canvas.drawText("FDO.", 258, 678, titulo);
+        canvas.drawText("FDO. OPERADOR", 258, 678, titulo);
 
 
         // Espacio Firma
@@ -518,7 +518,7 @@ public class Moviliario2 extends AppCompatActivity {
         pdfDocument.finishPage(pagina1);
 
 
-        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), descripcionMueble.toUpperCase()+"_"+fecha+".pdf");
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), descripcionMueble.toUpperCase()+".pdf");
 
 
         try {
