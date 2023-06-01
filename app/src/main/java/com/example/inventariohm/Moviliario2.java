@@ -17,6 +17,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
 import android.os.Bundle;
@@ -31,9 +32,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+
+
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.util.concurrent.TimeUnit;
 
 public class Moviliario2 extends AppCompatActivity {
 
@@ -200,6 +206,7 @@ public class Moviliario2 extends AppCompatActivity {
 
 
     public void crearPDF() throws IOException {
+        ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
 
 
         PdfDocument pdfDocument = new PdfDocument();
@@ -280,7 +287,7 @@ public class Moviliario2 extends AppCompatActivity {
         // LARGO INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(largo+"", 108, 162, titulo);
+        canvas.drawText(largo+" cm", 108, 162, titulo);
 
         //Ancho
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -295,7 +302,7 @@ public class Moviliario2 extends AppCompatActivity {
         //Ancho INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(ancho+"", 280, 162, titulo);
+        canvas.drawText(ancho+" cm", 280, 162, titulo);
 
         //Alto
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -310,7 +317,7 @@ public class Moviliario2 extends AppCompatActivity {
         //Alto Info
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(alto+"", 456, 162, titulo);
+        canvas.drawText(alto+" cm", 456, 162, titulo);
 
         //Cantidad
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -385,7 +392,12 @@ public class Moviliario2 extends AppCompatActivity {
         //Notas info
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(notas.toUpperCase()+"", 102, 250, titulo);
+        String[] arrDescripcion2 = notas.split("\n");
+        int y2 = 251;
+        for(int i = 0 ; i < arrDescripcion2.length&&i<=3 ; i++) {
+            canvas.drawText(arrDescripcion2[i], 102, y2, titulo);
+            y2 += 15;
+        }
 
         //Observaciones
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -400,7 +412,13 @@ public class Moviliario2 extends AppCompatActivity {
         //Observaciones INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(observaciones.toUpperCase()+"", 149, 330, titulo);
+        String[] arrDescripcion = observaciones.split("\n");
+        int y = 330;
+        for(int i = 0 ; i < arrDescripcion.length&&i<=4 ; i++) {
+            canvas.drawText(arrDescripcion[i], 149, y, titulo);
+            y += 15;
+        }
+
 
         //FRONTAL
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -408,6 +426,7 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawText("FRONTAL", 60, 420, titulo);
 
         //IMAGEN FRONTAL
+
         if (UriImagen1 != null) {
             bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen1);
         } else {
@@ -425,6 +444,7 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawText("TRASERA", 277, 420, titulo);
 
         //IMAGEN Trasera
+
         if (UriImagen2 != null) {
             bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen2);
         } else {
@@ -432,7 +452,7 @@ public class Moviliario2 extends AppCompatActivity {
             bitmap.eraseColor(android.graphics.Color.WHITE);
         }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
-        canvas.drawBitmap(bitmapEscala, 255, 437, paint);
+        canvas.drawBitmap(bitmapEscala, 249, 437, paint);
 
         //Interna
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -440,6 +460,7 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawText("INTERNA", 473, 420, titulo);
 
         //IMAGEN Interna
+
         if (UriImagen3 != null) {
             bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen3);
         } else {
@@ -455,6 +476,7 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawText("UBICACION", 160, 539, titulo);
 
         //IMAGEN Ubicacion
+
         if (UriImagen4 != null) {
             bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen4);
         } else {
@@ -470,6 +492,7 @@ public class Moviliario2 extends AppCompatActivity {
         canvas.drawText("INCIDENCIAS", 364, 539, titulo);
 
         //IMAGEN incidencias
+
         if (UriImagen5 != null) {
             bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), UriImagen5);
         } else {
@@ -477,7 +500,7 @@ public class Moviliario2 extends AppCompatActivity {
             bitmap.eraseColor(android.graphics.Color.WHITE);
         }
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
-        canvas.drawBitmap(bitmapEscala, 364, 548, paint);
+        canvas.drawBitmap(bitmapEscala, 348, 548, paint);
 
         // Firma Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
@@ -570,7 +593,9 @@ public class Moviliario2 extends AppCompatActivity {
             Uri selectedImage = data.getData();
             switch (selector) {
                 case 1:
+
                     UriImagen1 = selectedImage;
+
                     ivFoto1.setImageURI(UriImagen1);
                     break;
                 case 2:
@@ -607,4 +632,6 @@ public class Moviliario2 extends AppCompatActivity {
         }
         return result;
     }
+
+
 }

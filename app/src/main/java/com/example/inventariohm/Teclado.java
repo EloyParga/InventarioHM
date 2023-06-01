@@ -261,7 +261,7 @@ public class Teclado extends AppCompatActivity {
         //Largo INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(largo.toUpperCase(), 107, 194, titulo);
+        canvas.drawText(largo.toUpperCase()+" cm", 107, 194, titulo);
 
         //Ancho
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -276,7 +276,7 @@ public class Teclado extends AppCompatActivity {
         //Ancho INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(ancho.toUpperCase(), 292, 194, titulo);
+        canvas.drawText(ancho.toUpperCase()+" cm", 292, 194, titulo);
 
         //Alto
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -291,7 +291,7 @@ public class Teclado extends AppCompatActivity {
         //Alto INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(alto.toUpperCase(), 462, 194, titulo);
+        canvas.drawText(alto.toUpperCase()+" cm", 462, 194, titulo);
 
         //Idioma
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -337,7 +337,12 @@ public class Teclado extends AppCompatActivity {
         //Observaciones INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(observacion.toUpperCase(), 148, 294, titulo);
+        String[] arrDescripcion = observacion.split("\n");
+        int y = 293;
+        for(int i = 0 ; i < arrDescripcion.length&&i<=10  ; i++) {
+            canvas.drawText(arrDescripcion[i], 150, y, titulo);
+            y += 15;
+        }
 
         //Incidencias
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));

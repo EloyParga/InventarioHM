@@ -272,7 +272,7 @@ public class Portatil2 extends AppCompatActivity {
         //Largo Info
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(largo+"", 107, 174, titulo);
+        canvas.drawText(largo+" cm", 107, 174, titulo);
 
         //Ancho
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -287,7 +287,7 @@ public class Portatil2 extends AppCompatActivity {
         //Ancho info
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(ancho+"", 292, 174, titulo);
+        canvas.drawText(ancho+" cm", 292, 174, titulo);
 
         //Alto
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -302,7 +302,7 @@ public class Portatil2 extends AppCompatActivity {
         //Alto INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(alto+"", 462, 174, titulo);
+        canvas.drawText(alto+" cm", 462, 174, titulo);
 
         //Procesador
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -572,7 +572,12 @@ public class Portatil2 extends AppCompatActivity {
         //Observaciones INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(observaciones+"", 150, 393, titulo);
+        String[] arrDescripcion = observaciones.split("\n");
+        int y = 381;
+        for(int i = 0 ; i < arrDescripcion.length&&i<=2 ; i++) {
+            canvas.drawText(arrDescripcion[i], 150, y, titulo);
+            y += 15;
+        }
 
         //FRONTAL
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));

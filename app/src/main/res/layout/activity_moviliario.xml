@@ -265,7 +265,7 @@
                     android:background="@drawable/notes_background"
                     android:ems="10"
                     android:hint="Notas..."
-                    android:inputType="text"
+                    android:inputType="text|textMultiLine"
                     android:textAlignment="center" />
             </LinearLayout>
 

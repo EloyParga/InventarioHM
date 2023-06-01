@@ -265,7 +265,7 @@ public class Pantalla2 extends AppCompatActivity {
         //Largo INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(largo.toUpperCase(), 107, 174, titulo);
+        canvas.drawText(largo.toUpperCase()+" cm", 107, 174, titulo);
 
         //Ancho
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -280,7 +280,7 @@ public class Pantalla2 extends AppCompatActivity {
         //Ancho INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(ancho.toUpperCase(), 292, 174, titulo);
+        canvas.drawText(ancho.toUpperCase()+" cm", 292, 174, titulo);
 
         //Alto
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -295,7 +295,7 @@ public class Pantalla2 extends AppCompatActivity {
         //Alto INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(alto.toUpperCase(), 462, 174, titulo);
+        canvas.drawText(alto.toUpperCase()+" cm", 462, 174, titulo);
 
         //RESOLUCION
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -447,7 +447,12 @@ public class Pantalla2 extends AppCompatActivity {
         //Observaciones
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(observaciones.toUpperCase(), 150, 333, titulo);
+        String[] arrDescripcion = observaciones.split("\n");
+        int y = 321;
+        for(int i = 0 ; i < arrDescripcion.length&&i<=4  ; i++) {
+            canvas.drawText(arrDescripcion[i], 150, y, titulo);
+            y += 15;
+        }
 
         //FRONTAL
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));

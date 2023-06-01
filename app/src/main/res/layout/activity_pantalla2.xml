@@ -67,7 +67,7 @@
         android:layout_height="250dp"
         android:background="@drawable/notes_background"
         android:hint="Observaciones..."
-        android:inputType="text"
+        android:inputType="text|textMultiLine"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

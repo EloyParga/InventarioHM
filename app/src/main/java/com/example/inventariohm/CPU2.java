@@ -262,7 +262,7 @@ public class CPU2 extends AppCompatActivity {
         //Largo INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(largo.toUpperCase(), 107, 174, titulo);
+        canvas.drawText(largo.toUpperCase()+" cm", 107, 174, titulo);
 
         //Ancho
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -277,7 +277,7 @@ public class CPU2 extends AppCompatActivity {
         //Ancho INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(ancho.toUpperCase(), 292, 174, titulo);
+        canvas.drawText(ancho.toUpperCase()+" cm", 292, 174, titulo);
 
         //Alto
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -292,7 +292,7 @@ public class CPU2 extends AppCompatActivity {
         //Alto IFNO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(alto.toUpperCase(), 462, 174, titulo);
+        canvas.drawText(alto.toUpperCase()+" cm", 462, 174, titulo);
 
         //Procesador
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
@@ -469,10 +469,15 @@ public class CPU2 extends AppCompatActivity {
         bitmapEscala = Bitmap.createScaledBitmap(bitmap, 405, 75, false);
         canvas.drawBitmap(bitmapEscala, 147, 309, paint);
 
-        //Observaciones
+        //Observaciones Info
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
         titulo.setTextSize(10);
-        canvas.drawText(observaciones.toUpperCase(), 150, 333, titulo);
+        String[] arrDescripcion = observaciones.split("\n");
+        int y = 321;
+        for(int i = 0 ; i < arrDescripcion.length&&i<=4  ; i++) {
+            canvas.drawText(arrDescripcion[i], 150, y, titulo);
+            y += 15;
+        }
 
         //FRONTAL
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
