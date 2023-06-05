@@ -6,65 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="80dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:srcCompat="@drawable/hmlogo" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingTop="80dp">
+            android:paddingLeft="80dp"
+            android:paddingTop="100dp"
+            android:paddingRight="80dp">
 
-            <ImageView
-                android:id="@+id/imageView"
+            <Button
+                android:id="@+id/button4"
                 android:layout_width="match_parent"
-                android:layout_height="421dp"
-                app:srcCompat="@drawable/hmlogo" />
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/Green"
+                android:onClick="BtnHardware"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:text="HARDWARE"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:cornerRadius="30dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:paddingLeft="80dp"
-                android:paddingTop="100dp"
-                android:paddingRight="80dp">
+                android:paddingTop="50dp">
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/button"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/Green"
-                    android:onClick="BtnHardware"
+                    android:onClick="BtnMueble"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
-                    android:text="HARDWARE"
+                    android:text="MOBILIARIO"
                     android:textColor="#000000"
-                    android:textSize="36sp"
+                    android:textSize="20sp"
                     app:cornerRadius="30dp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingTop="50dp">
-
-                    <Button
-                        android:id="@+id/button"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:backgroundTint="@color/Green"
-                        android:onClick="BtnMueble"
-                        android:paddingTop="20dp"
-                        android:paddingBottom="20dp"
-                        android:text="MOBILIARIO"
-                        android:textColor="#000000"
-                        android:textSize="36sp"
-                        app:cornerRadius="30dp" />
-                </LinearLayout>
-
             </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
