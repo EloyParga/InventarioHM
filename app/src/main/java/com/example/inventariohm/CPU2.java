@@ -173,6 +173,7 @@ public class CPU2 extends AppCompatActivity {
 
     //Metodo que crea el archivo .PDF dandole un formato y cargando el contenido de las variables
     public void crearPDFCPU() throws IOException {
+        int m=3;
         PdfDocument pdfDocument = new PdfDocument();
         Paint paint = new Paint();
         TextPaint titulo = new TextPaint();
@@ -180,7 +181,7 @@ public class CPU2 extends AppCompatActivity {
 
         Bitmap bitmap, bitmapEscala;
 
-        PdfDocument.PageInfo paginaInfo = new PdfDocument.PageInfo.Builder(595, 842, 1).create();
+        PdfDocument.PageInfo paginaInfo = new PdfDocument.PageInfo.Builder(595*m, 842*m, 1).create();
         PdfDocument.Page pagina1 = pdfDocument.startPage(paginaInfo);
 
         Canvas canvas = pagina1.getCanvas();
@@ -188,301 +189,301 @@ public class CPU2 extends AppCompatActivity {
 
         //Banner Superior
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 595, 70, false);
-        canvas.drawBitmap(bitmapEscala, 0, 43, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 595*m, 70*m, false);
+        canvas.drawBitmap(bitmapEscala, 0*m, 43*m, paint);
 
 
         //LOGO
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hmlogo);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 60, 60, false);
-        canvas.drawBitmap(bitmapEscala, 492, 48, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 60*m, 60*m, false);
+        canvas.drawBitmap(bitmapEscala, 492*m, 48*m, paint);
 
 
         //DIRECCION
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("Cl. Gran Capitán, 52. Gijón".toUpperCase(), 43, 80, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("Cl. Gran Capitán, 52. Gijón".toUpperCase(), 43*m, 80*m, titulo);
 
 
         //CORREO Y TELEFONO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("+34 985 66 54 41   hm@hazmaker.org".toUpperCase(), 222, 80, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("+34 985 66 54 41   hm@hazmaker.org".toUpperCase(), 222*m, 80*m, titulo);
 
         //Modelo
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("Modelo".toUpperCase(), 43, 144, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("Modelo".toUpperCase(), 43*m, 144*m, titulo);
 
         // Modelo Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 170, 24, false);
-        canvas.drawBitmap(bitmapEscala, 104,129 , paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 170*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 104*m,129*m , paint);
 
         //Modelo INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText((modelo.toUpperCase()), 107, 144, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText((modelo.toUpperCase()), 107*m, 144*m, titulo);
 
         //NUMERO SERIE
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("Nº Serie".toUpperCase(), 286, 144, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("Nº Serie".toUpperCase(), 286*m, 144*m, titulo);
 
         // Numero Serie Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 24, false);
-        canvas.drawBitmap(bitmapEscala, 343,129 , paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 343*m,129*m , paint);
 
         //NUMERO SERIE INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText((serie.toUpperCase()), 346, 144, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText((serie.toUpperCase()), 346*m, 144*m, titulo);
 
         // FECHA Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 90, 24, false);
-        canvas.drawBitmap(bitmapEscala, 462,129 , paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 90*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 462*m,129*m , paint);
 
         //FECHA
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText(fecha.toUpperCase(), 465, 144, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText(fecha.toUpperCase(), 465*m, 144*m, titulo);
 
         //Largo
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("Largo".toUpperCase(), 43, 174, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("Largo".toUpperCase(), 43*m, 174*m, titulo);
 
         // Largo Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 24, false);
-        canvas.drawBitmap(bitmapEscala, 104, 159, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 104*m, 159*m, paint);
 
         //Largo INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText(largo.toUpperCase()+" cm", 107, 174, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText(largo.toUpperCase()+" cm", 107*m, 174*m, titulo);
 
         //Ancho
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("Ancho".toUpperCase(), 233, 174, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("Ancho".toUpperCase(), 233*m, 174*m, titulo);
 
         // Ancho Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 24, false);
-        canvas.drawBitmap(bitmapEscala, 289, 159, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 289*m, 159*m, paint);
 
         //Ancho INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText(ancho.toUpperCase()+" cm", 292, 174, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText(ancho.toUpperCase()+" cm", 292*m, 174*m, titulo);
 
         //Alto
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("Alto".toUpperCase(), 420, 174, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("Alto".toUpperCase(), 420*m, 174*m, titulo);
 
         // Alto Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93, 24, false);
-        canvas.drawBitmap(bitmapEscala, 459, 159, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 93*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 459*m, 159*m, paint);
 
         //Alto IFNO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText(alto.toUpperCase()+" cm", 462, 174, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText(alto.toUpperCase()+" cm", 462*m, 174*m, titulo);
 
         //Procesador
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("Procesador".toUpperCase(), 43, 204, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("Procesador".toUpperCase(), 43*m, 204*m, titulo);
 
         // Procesador Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 240, 24, false);
-        canvas.drawBitmap(bitmapEscala, 118, 189, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 240*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 118*m, 189*m, paint);
 
         //Procesador INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText((procesador.toUpperCase()), 121, 204, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText((procesador.toUpperCase()), 121*m, 204*m, titulo);
 
         //RAM
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("RAM".toUpperCase(), 384, 204, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("RAM".toUpperCase(), 384*m, 204*m, titulo);
 
         // RAM Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 130, 24, false);
-        canvas.drawBitmap(bitmapEscala, 422, 189, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 130*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 422*m, 189*m, paint);
 
         //RAM INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText(ram.toUpperCase(), 425, 204, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText(ram.toUpperCase(), 425*m, 204*m, titulo);
 
         //Alimentacion
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("Alimentacion".toUpperCase(), 43, 234, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("Alimentacion".toUpperCase(), 43*m, 234*m, titulo);
 
         //Alimentacion Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 150, 24, false);
-        canvas.drawBitmap(bitmapEscala, 133, 219, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 150*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 133*m, 219*m, paint);
 
         //Alimentacion INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText(alimentacion.toUpperCase(), 136, 234, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText(alimentacion.toUpperCase(), 136*m, 234*m, titulo);
 
         //SSD
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("SSD".toUpperCase(), 300, 234, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("SSD".toUpperCase(), 300*m, 234*m, titulo);
 
         // SSD final Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
-        canvas.drawBitmap(bitmapEscala, 332, 219, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 332*m, 219*m, paint);
 
         //SSD INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText(ssd.toUpperCase(), 335, 234, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText(ssd.toUpperCase(), 335*m, 234*m, titulo);
 
         //HDD final
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("HDD".toUpperCase(), 435, 234, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("HDD".toUpperCase(), 435*m, 234*m, titulo);
 
         // HDD final Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
-        canvas.drawBitmap(bitmapEscala, 472, 219, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 472*m, 219*m, paint);
 
         //HDD INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText(hdd.toUpperCase(), 475, 234, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText(hdd.toUpperCase(), 475*m, 234*m, titulo);
 
         //VGA
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("VGA".toUpperCase(), 43, 264, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("VGA".toUpperCase(), 43*m, 264*m, titulo);
 
         // VGA Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
-        canvas.drawBitmap(bitmapEscala, 80, 249, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 80*m, 249*m, paint);
 
         //VGA INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText(vga.toUpperCase(), 83, 264, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText(vga.toUpperCase(), 83*m, 264*m, titulo);
 
         //HDMI
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("HDMI".toUpperCase(), 242, 264, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("HDMI".toUpperCase(), 242*m, 264*m, titulo);
 
         // HDMI Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
-        canvas.drawBitmap(bitmapEscala, 279, 249, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 279*m, 249*m, paint);
 
         //HDMI INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText(hdmi.toUpperCase(), 282, 264, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText(hdmi.toUpperCase(), 282*m, 264*m, titulo);
 
         //USB
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("USB".toUpperCase(), 435, 264, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("USB".toUpperCase(), 435*m, 264*m, titulo);
 
         // USB Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
-        canvas.drawBitmap(bitmapEscala, 472, 249, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 472*m, 249*m, paint);
 
         //USB INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText(usb.toUpperCase(), 475, 264, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText(usb.toUpperCase(), 475*m, 264*m, titulo);
 
         //DVI
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("DVI".toUpperCase(), 43, 294, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("DVI".toUpperCase(), 43*m, 294*m, titulo);
 
         // DVI Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
-        canvas.drawBitmap(bitmapEscala, 80, 279, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 80*m, 279*m, paint);
 
         //DVI IFNO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText(dvi.toUpperCase(), 83, 294, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText(dvi.toUpperCase(), 83*m, 294*m, titulo);
 
         //DP
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("DP".toUpperCase(), 242, 294, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("DP".toUpperCase(), 242*m, 294*m, titulo);
 
         // DP Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80, 24, false);
-        canvas.drawBitmap(bitmapEscala, 279, 279, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 279*m, 279*m, paint);
 
         //DP IFNO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText(dp.toUpperCase(), 282, 294, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText(dp.toUpperCase(), 282*m, 294*m, titulo);
 
         //DVDR
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("DVDR".toUpperCase(), 435, 294, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("DVDR".toUpperCase(), 435*m, 294*m, titulo);
 
         // DVDR Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 24, 24, false);
-        canvas.drawBitmap(bitmapEscala, 500, 279, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 24*m, 24*m, false);
+        canvas.drawBitmap(bitmapEscala, 500*m, 279*m, paint);
 
         //DVDR INFO
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
-        canvas.drawText(dvdr.toUpperCase(), 503, 294, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText(dvdr.toUpperCase(), 503*m, 294*m, titulo);
 
         //Observaciones
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("Observaciones".toUpperCase(), 43, 333, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("Observaciones".toUpperCase(), 43*m, 333*m, titulo);
 
         // Observaciones Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 405, 75, false);
-        canvas.drawBitmap(bitmapEscala, 147, 309, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 405*m, 75*m, false);
+        canvas.drawBitmap(bitmapEscala, 147*m, 309*m, paint);
 
         //Observaciones Info
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-        titulo.setTextSize(10);
+        titulo.setTextSize(10*m);
         String[] arrDescripcion = observaciones.split("\n");
-        int y = 321;
+        int y = 321*m;
         for(int i = 0 ; i < arrDescripcion.length&&i<=4  ; i++) {
-            canvas.drawText(arrDescripcion[i], 150, y, titulo);
-            y += 15;
+            canvas.drawText(arrDescripcion[i], 150*m, y, titulo);
+            y += 15*m;
         }
 
         //FRONTAL
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("FRONTAL".toUpperCase(), 179, 423, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("FRONTAL".toUpperCase(), 179*m, 423*m, titulo);
 
         //IMAGEN FRONTAL
         if (UriImagen1 != null) {
@@ -491,13 +492,13 @@ public class CPU2 extends AppCompatActivity {
             bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
             bitmap.eraseColor(android.graphics.Color.WHITE);
         }
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
-        canvas.drawBitmap(bitmapEscala, 161, 430, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100*m, 100*m, false);
+        canvas.drawBitmap(bitmapEscala, 161*m, 430*m, paint);
 
         //N/S
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("N/S".toUpperCase(), 364, 423, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("N/S".toUpperCase(), 364*m, 423*m, titulo);
 
         //N/S Imagen
         if (UriImagen2 != null) {
@@ -506,13 +507,13 @@ public class CPU2 extends AppCompatActivity {
             bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
             bitmap.eraseColor(android.graphics.Color.WHITE);
         }
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
-        canvas.drawBitmap(bitmapEscala, 330, 430, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100*m, 100*m, false);
+        canvas.drawBitmap(bitmapEscala, 330*m, 430*m, paint);
 
         //Puertos
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("INTERNA".toUpperCase(), 62, 544, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("INTERNA".toUpperCase(), 62*m, 544*m, titulo);
 
         //IMAGEN Puetos
         if (UriImagen3 != null) {
@@ -521,14 +522,14 @@ public class CPU2 extends AppCompatActivity {
             bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
             bitmap.eraseColor(android.graphics.Color.WHITE);
         }
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
-        canvas.drawBitmap(bitmapEscala, 43, 550, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100*m, 100*m, false);
+        canvas.drawBitmap(bitmapEscala, 43*m, 550*m, paint);
 
 
         //Incidencias
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("INCIDENCIAS".toUpperCase(), 453, 544, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("INCIDENCIAS".toUpperCase(), 453*m, 544*m, titulo);
 
         //IMAGEN incidencias
         if (UriImagen4 != null) {
@@ -537,34 +538,34 @@ public class CPU2 extends AppCompatActivity {
             bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
             bitmap.eraseColor(android.graphics.Color.WHITE);
         }
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
-        canvas.drawBitmap(bitmapEscala, 444, 550, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 100*m, 100*m, false);
+        canvas.drawBitmap(bitmapEscala, 444*m, 550*m, paint);
 
         // Firma Banner
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_light);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 595, 23, false);
-        canvas.drawBitmap(bitmapEscala, 0, 665, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 595*m, 23*m, false);
+        canvas.drawBitmap(bitmapEscala, 0*m, 665*m, paint);
 
         //FIRMA
         titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        titulo.setTextSize(10);
-        canvas.drawText("FDO. OPERADOR".toUpperCase(), 255, 680, titulo);
+        titulo.setTextSize(10*m);
+        canvas.drawText("FDO. OPERADOR".toUpperCase(), 255*m, 680*m, titulo);
 
 
         // Espacio Firma
         bitmap = BitmapFactory.decodeResource(getResources(), com.google.android.material.R.drawable.abc_list_selector_disabled_holo_dark);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 255, 114, false);
-        canvas.drawBitmap(bitmapEscala, 170, 693, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 255*m, 114*m, false);
+        canvas.drawBitmap(bitmapEscala, 170*m, 693*m, paint);
 
 
         // Espacio Blanco Firma
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.pixelblanco);
-        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 253, 112, false);
-        canvas.drawBitmap(bitmapEscala, 171, 694, paint);
+        bitmapEscala = Bitmap.createScaledBitmap(bitmap, 253*m, 112*m, false);
+        canvas.drawBitmap(bitmapEscala, 171*m, 694*m, paint);
 
 
         descripcion.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
-        descripcion.setTextSize(14);
+        descripcion.setTextSize(14*m);
 
         /*
         String[] arrDescripcion = descripcionText.split("\n");
