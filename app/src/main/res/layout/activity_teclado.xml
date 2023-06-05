@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".Teclado">
 
+    <ImageView
+        android:id="@+id/ivMovil2Logo4"
+        android:layout_width="601dp"
+        android:layout_height="598dp"
+        android:alpha="0.30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hmlogo" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnAntMovil6"
         android:layout_width="wrap_content"
@@ -38,19 +49,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.939" />
 
-    <ImageView
-        android:id="@+id/ivMovil2Logo4"
-        android:layout_width="601dp"
-        android:layout_height="598dp"
-        android:alpha="0.30"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hmlogo" />
-
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="600dp"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="40dp"
@@ -183,13 +184,17 @@
 
     <EditText
         android:id="@+id/etObservaMoviliario5"
-        android:layout_width="500dp"
-        android:layout_height="250dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/notes_background"
         android:hint="Observaciones..."
         android:inputType="text|textMultiLine"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnPDFmoviliario4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"

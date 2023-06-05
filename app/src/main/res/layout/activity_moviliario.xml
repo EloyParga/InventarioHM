@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingTop="30dp">
+                android:paddingTop="10dp">
 
                 <EditText
                     android:id="@+id/etNSMoviliario"
@@ -98,7 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingTop="30dp">
+                android:paddingTop="10dp">
 
                 <EditText
                     android:id="@+id/etDesMoviliario"
@@ -115,7 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingTop="30dp">
+                android:paddingTop="10dp">
 
                 <EditText
                     android:id="@+id/etLargoCPU"
@@ -176,7 +176,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingTop="30dp">
+                android:paddingTop="10dp">
 
                 <EditText
                     android:id="@+id/etCantidad"
@@ -212,7 +212,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="horizontal"
-                android:paddingTop="30dp">
+                android:paddingTop="10dp">
 
                 <EditText
                     android:id="@+id/etPIMoviliario"
@@ -256,12 +256,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingTop="30dp">
+                android:paddingTop="10dp">
 
                 <EditText
                     android:id="@+id/etNotaMoviliario"
                     android:layout_width="match_parent"
-                    android:layout_height="280dp"
+                    android:layout_height="200dp"
                     android:background="@drawable/notes_background"
                     android:ems="10"
                     android:hint="Notas..."

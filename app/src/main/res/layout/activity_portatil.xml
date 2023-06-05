@@ -6,31 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Portatil">
 
-    <EditText
-        android:id="@+id/etAlmacenamiento2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="550dp"
-        android:layout_weight="1"
-        android:ems="10"
-        android:hint="Almacenamiento"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/logo3" />
-
-    <ImageView
-        android:id="@+id/logo3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.30"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hmlogo" />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnAntMovil7"
         android:layout_width="wrap_content"
@@ -44,6 +19,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.94"
         app:srcCompat="@drawable/flechaizq" />
+
+    <ImageView
+        android:id="@+id/ivMovil2Logo7"
+        android:layout_width="601dp"
+        android:layout_height="598dp"
+        android:alpha="0.30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hmlogo" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnSigMovil2"
@@ -61,13 +47,10 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="600dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="1dp"
         android:orientation="vertical"
-        android:paddingLeft="40dp"
-        android:paddingTop="30dp"
-        android:paddingRight="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -79,7 +62,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingTop="15dp"
-            android:paddingBottom="15dp">
+            android:paddingBottom="5dp">
 
             <EditText
                 android:id="@+id/etLargoPantalla"
@@ -140,8 +123,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp">
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
 
             <EditText
                 android:id="@+id/etProcesador"
@@ -181,8 +164,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp">
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
 
             <EditText
                 android:id="@+id/etGrafica"
@@ -222,8 +205,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp">
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
 
             <Spinner
                 android:id="@+id/spConectividad"
@@ -251,8 +234,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp">
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
 
             <Spinner
                 android:id="@+id/spIdioma"
@@ -282,9 +265,9 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:paddingLeft="80dp"
-            android:paddingTop="15dp"
+            android:paddingTop="5dp"
             android:paddingRight="80dp"
-            android:paddingBottom="15dp">
+            android:paddingBottom="5dp">
 
             <Spinner
                 android:id="@+id/spConexion"
@@ -305,8 +288,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp">
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
 
             <EditText
                 android:id="@+id/etAlimentacionPort"
@@ -363,17 +346,27 @@
 
         </LinearLayout>
 
+        <EditText
+            android:id="@+id/etAlmacenamiento2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Almacenamiento"
+            android:inputType="numberDecimal" />
+
         <TextView
             android:id="@+id/tvEnumPuertos"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="61dp"
             android:paddingLeft="60dp"
-            android:paddingTop="15dp"
+            android:paddingTop="5dp"
             android:paddingRight="60dp"
             android:paddingBottom="10dp"
             android:text="Introduce el numero de Puertos de la CPU:"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 

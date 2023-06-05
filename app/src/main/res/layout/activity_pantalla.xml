@@ -7,9 +7,9 @@
     tools:context=".Pantalla">
 
     <ImageView
-        android:id="@+id/logo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/ivMovil2Logo6"
+        android:layout_width="601dp"
+        android:layout_height="598dp"
         android:alpha="0.30"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,11 +47,11 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="600dp"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="40dp"
-        android:paddingTop="200dp"
+        android:paddingTop="20dp"
         android:paddingRight="40dp"
         android:paddingBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"

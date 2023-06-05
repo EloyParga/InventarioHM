@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".CPU2">
 
+    <ImageView
+        android:id="@+id/ivMovil2Logo2"
+        android:layout_width="601dp"
+        android:layout_height="598dp"
+        android:alpha="0.30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hmlogo" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnAntCPU"
         android:layout_width="wrap_content"
@@ -37,16 +48,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.939" />
-
-    <ImageView
-        android:id="@+id/ivMovil2Logo2"
-        android:layout_width="601dp"
-        android:layout_height="598dp"
-        android:alpha="0.30"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hmlogo" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -170,8 +171,8 @@
 
     <EditText
         android:id="@+id/etObservaMoviliario"
-        android:layout_width="500dp"
-        android:layout_height="250dp"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
         android:background="@drawable/notes_background"
         android:hint="Observaciones..."
         android:inputType="text|textMultiLine"
