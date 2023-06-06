@@ -194,12 +194,10 @@
             android:id="@+id/tvEnumPuertos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="60dp"
             android:paddingTop="40dp"
-            android:paddingRight="60dp"
-            android:text="Introduce el numero de Puertos del Monitor:"
+            android:text="Introduce el numero de Puertos:"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 

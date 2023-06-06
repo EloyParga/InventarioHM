@@ -186,7 +186,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp">
+                android:layout_marginEnd="20dp"
+                android:paddingTop="10dp">
 
                 <Spinner
                     android:id="@+id/spAlimentacionCPU2"
@@ -222,6 +223,7 @@
                 android:id="@+id/textView23"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="20dp"
                 android:text="Indica el numero de puertos"
                 android:textAlignment="center"
                 android:textSize="20sp" />
@@ -239,7 +241,7 @@
                     android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="VGA:"
+                    android:text="VGA"
                     android:textSize="20sp" />
 
                 <EditText
@@ -266,7 +268,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="HDMI:"
+                    android:text="HDMI"
                     android:textSize="20sp" />
 
                 <EditText
@@ -293,7 +295,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="USB:"
+                    android:text="USB"
                     android:textSize="20sp" />
 
                 <EditText
@@ -320,7 +322,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="DVI:"
+                    android:text="DVI"
                     android:textSize="20sp" />
 
                 <EditText
@@ -347,7 +349,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="DP:"
+                    android:text="DP"
                     android:textSize="20sp" />
 
                 <EditText
