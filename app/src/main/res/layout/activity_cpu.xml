@@ -6,14 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".CPU">
 
+    <ImageView
+        android:id="@+id/ivMovil2Logo8"
+        android:layout_width="601dp"
+        android:layout_height="598dp"
+        android:alpha="0.30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hmlogo" />
+
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/linearLayout5"
@@ -88,7 +100,7 @@
                 <EditText
                     android:id="@+id/etCantidad"
                     android:layout_width="wrap_content"
-                    android:layout_height="60dp"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="Procesador"
@@ -97,7 +109,7 @@
                 <EditText
                     android:id="@+id/etUbicacion"
                     android:layout_width="wrap_content"
-                    android:layout_height="60dp"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="RAM"
@@ -109,7 +121,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:orientation="horizontal">
 
@@ -129,7 +140,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_weight="5"
                 android:orientation="horizontal">
@@ -176,7 +186,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp">
 
                 <Spinner
@@ -213,7 +222,6 @@
                 android:id="@+id/textView23"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
                 android:text="Indica el numero de puertos"
                 android:textAlignment="center"
                 android:textSize="20sp" />
@@ -223,7 +231,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="100dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginEnd="100dp"
                 android:orientation="horizontal">
 
@@ -250,7 +257,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="100dp"
-                android:layout_marginTop="4dp"
                 android:layout_marginEnd="100dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
@@ -278,7 +284,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="100dp"
-                android:layout_marginTop="4dp"
                 android:layout_marginEnd="100dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
@@ -306,7 +311,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="100dp"
-                android:layout_marginTop="4dp"
                 android:layout_marginEnd="100dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
@@ -334,7 +338,6 @@
                 android:layout_width="208dp"
                 android:layout_height="46dp"
                 android:layout_marginStart="100dp"
-                android:layout_marginTop="16dp"
                 android:layout_marginEnd="100dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
@@ -361,7 +364,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="100dp"
-                android:layout_marginTop="12dp"
                 android:layout_marginEnd="100dp"
                 android:orientation="horizontal">
 
@@ -383,32 +385,20 @@
         </LinearLayout>
     </ScrollView>
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="601dp"
-        android:layout_height="598dp"
-        android:alpha="0.30"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hmlogo" />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="-450dp"
         android:layout_weight="1"
         android:clickable="true"
         android:onClick="retroceder"
         android:translationX="50dp"
         app:backgroundTint="@color/Green"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/scrollView3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.942"
+        app:layout_constraintVertical_bias="0.95"
         app:srcCompat="@drawable/flechaizq" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

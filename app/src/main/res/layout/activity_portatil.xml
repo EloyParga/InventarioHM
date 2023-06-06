@@ -61,7 +61,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="15dp"
             android:paddingBottom="5dp">
 
             <EditText
@@ -359,11 +358,9 @@
         <TextView
             android:id="@+id/tvEnumPuertos"
             android:layout_width="match_parent"
-            android:layout_height="61dp"
+            android:layout_height="50dp"
             android:paddingLeft="60dp"
-            android:paddingTop="5dp"
             android:paddingRight="60dp"
-            android:paddingBottom="10dp"
             android:text="Introduce el numero de Puertos de la CPU:"
             android:textAlignment="center"
             android:textSize="15sp" />
@@ -385,7 +382,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="10dp">
+            android:paddingBottom="5dp">
 
             <TextView
                 android:id="@+id/uds"
