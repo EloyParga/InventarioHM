@@ -292,7 +292,7 @@
 
             <EditText
                 android:id="@+id/etAlimentacionPort"
-                android:layout_width="1dp"
+                android:layout_width="39dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="33"
                 android:ems="10"
@@ -321,11 +321,6 @@
                 android:textSize="20sp"
                 android:translationY="11dp" />
 
-            <TextView
-                android:id="@+id/separador4"
-                android:layout_width="10dp"
-                android:layout_height="match_parent" />
-
             <EditText
                 android:id="@+id/etIntensidad"
                 android:layout_width="1dp"
@@ -347,7 +342,7 @@
 
         <EditText
             android:id="@+id/etAlmacenamiento2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_weight="1"
@@ -370,10 +365,11 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
-        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
         app:layout_constraintVertical_bias="0.0">
@@ -463,10 +459,11 @@
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
         app:layout_constraintVertical_bias="0.0">
