@@ -559,7 +559,8 @@ public class Pantalla2 extends AppCompatActivity {
             pdfDocument.writeTo(new FileOutputStream(file));
             Toast.makeText(this, "Se creo el PDF correctamente", Toast.LENGTH_LONG).show();
         } catch (Exception e) {
-            e.printStackTrace();
+            Toast.makeText(this, "Denegacion de acceso", Toast.LENGTH_LONG).show();
+
         }
 
         pdfDocument.close();
